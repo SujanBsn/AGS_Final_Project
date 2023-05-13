@@ -1,17 +1,18 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class String1 : MonoBehaviour
 {
-    [SerializeField] private GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
-    
+    public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
+    Vector2 startPosValue, endPosValue, bridgePosValue;
+
     StringController StringController;
     PlayNote PlayNote;
 
-    Vector2 startPosValue, endPosValue, bridgePosValue;
-    bool pressed = false;  //to check if the mover is pressed
-
     static double[] nutToFret = new double[20];
+
+    bool pressed = false;  //to check if the mover is pressed
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class String1 : MonoBehaviour
         bridgePosValue = bridgePos.transform.position;
 
         StringController = new StringController();
-        PlayNote = GetComponent<PlayNote>();
+        PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>(); //Because this script is a component of any object
 
         StringController.Enable();
         CalculateFretPosition();
@@ -30,11 +31,13 @@ public class String1 : MonoBehaviour
     /// <summary>
     /// Calculate and store the position of each fret from the nut and the bridge
     /// </summary>
-    void CalculateFretPosition()
+    public void CalculateFretPosition()
     {
         float scaleLength = startPosValue.x - bridgePosValue.x;  //the distance from the nut to bridge
         float distance = 0, location, scalingFactor;
 
+        //bridgeToFret[n-1] = scaleLength – nutToFret[n-1]
+        //nutToFret[n] = (bridgeToFret[n-1] / 17.817) + nutToFret[n-1]
         for (int fret = 0; fret <= 19; fret++)//fret is the number of frets
         {
             location = scaleLength - distance;
@@ -44,40 +47,32 @@ public class String1 : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// Slides the mover in the direction of the mouse
     /// </summary>
-    void Slide()
+    public void Slide()
     {
         if (pressed)
         {
-            float slope, directionX, directionY;
-            _ = new Vector2();
-            Vector2 location = mover.transform.position;
+            float slope=CalculateSlope();
 
-            Vector2 directionSlide = StringController.String1.MouseSlide.ReadValue<Vector2>();
-            directionX = directionSlide.x > 0 ? 2 : -2;
-            directionY = directionSlide.x > 0 ? -2 : 2;
-
-            slope = CalculateSlope(startPos, endPos);
-
-            location.x += directionX * .5f*.2f;  //*.5f*.1f is correction factor
-            location.y += directionY * slope * .5f*.2f; //same correction factor has to be applied to y
-            mover.transform.position = location;
+            Vector2 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //To make sure the mover stays on the string, we use :: y-y1 = m(x-x1)
+            mouseLocation.y = startPosValue.y + slope * (mouseLocation.x - startPosValue.x);
+            mover.transform.position = Vector3.MoveTowards(mover.transform.position, mouseLocation, 1f);
         }
     }
 
     /// <summary>
     /// Returns the slope of the string
     /// </summary>
-    float CalculateSlope(GameObject start, GameObject end)
+    public float CalculateSlope()
     {
         float deltaX, deltaY, slope;
 
         deltaX = endPosValue.x - startPosValue.x;
         deltaY = endPosValue.y - startPosValue.y;
-        slope = deltaY / Mathf.Abs(deltaX);
+        slope = deltaY / deltaX;
 
         return slope;
     }
@@ -85,76 +80,78 @@ public class String1 : MonoBehaviour
     /// <summary>
     /// Sets the fret number of the mover
     /// </summary>
-    void SetFretNum()
+    public void SetFretNum()
     {
-        Vector3 getPos = new();
+        Vector3 moverPosition = mover.transform.position;
         int fretNum = 0;
-
-        getPos = mover.transform.position;
 
         for (int i = 0; i <= 19; i++)
         {
-            if (getPos.x < nutToFret[i])
+            if (moverPosition.x < nutToFret[i])
             {
-                fretNum = i+1;
+                fretNum = i;
             }
         }
-        SetFrequency(fretNum);
-        Debug.Log(fretNum);
+       
+        if( fretNum <= 18 )
+            SetFrequency(fretNum);
     }
 
     /// <summary>
     /// Sets the frequency of the mover
     /// </summary>
-    void SetFrequency(int fretNum)
+    public void SetFrequency(int fretNum)
     {
+        Vector2 getPosOfFret = mover.transform.position;
+
         int upFret = fretNum + 1;
         int lowFret = fretNum;
 
-        float upFretFreq = 1, lowFretFreq = 1;
+        float upFretFreq = 1, lowFretFreq = 1, playFreq = 1;
 
+        //F(n+1)=F(n)*2^(1/12)
         for (int i = 0; i <= lowFret; i++)
         {
             lowFretFreq *= math.pow(2f, 1f / 12f);
             upFretFreq *= math.pow(2f, 1f / 12f);
         }
         upFretFreq *= math.pow(2f, 1f / 12f);
+        //playFreq is generated by linear interpolation of the frequency between the upper and lower fret from the selected position
+        playFreq = lowFretFreq + (upFretFreq - lowFretFreq) * (getPosOfFret.x - (float)nutToFret[lowFret])
+            / (float)(nutToFret[upFret] - (float)nutToFret[lowFret]);
+
+        PlayNote.SetNote(6, playFreq);
     }
 
     void Update()
     {
         if (!pressed)
         {
-            StringController.String1.MouseSlide.Disable();
+            StringController.String.MouseSlide.Disable();
         }
 
         SetFretNum();
-
         CheckPosition();
     }
 
     /// <summary>
     /// Makes sure the mover within the fretboard
     /// </summary>
-     void CheckPosition()
+    public void CheckPosition()
     {
-        if (mover.transform.position.x >= startPosValue.x)
-        {
-            mover.transform.position = startPosValue;
-        }
-        else if (mover.transform.position.x <= endPosValue.x)
-        {
-            mover.transform.position = endPosValue;
-        }
+        Vector2 moverPos = mover.transform.position;
+        
+        moverPos = moverPos.x >= startPosValue.x ? startPosValue : moverPos;
+        moverPos = moverPos.x <= endPosValue.x ? endPosValue : moverPos;
+
+        mover.transform.position = moverPos;
     }
 
     private void OnMouseDown()
     {
-        StringController.String1.MouseSlide.Enable();
-        StringController.String1.MouseClick.started += _ => pressed = true;
-        StringController.String1.MouseSlide.performed += _ => Slide();
-        StringController.String1.MouseClick.canceled += _ => pressed = false;
+        StringController.String.MouseSlide.Enable();
+        StringController.String.MouseClick.started += _ => pressed = true;
+        StringController.String.MouseSlide.performed += _ => Slide();
+        StringController.String.MouseClick.canceled += _ => pressed = false;
     }
-
-
 }

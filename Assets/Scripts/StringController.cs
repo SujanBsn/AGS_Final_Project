@@ -24,7 +24,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     ""name"": ""StringControl"",
     ""maps"": [
         {
-            ""name"": ""String1"",
+            ""name"": ""String"",
             ""id"": ""8dcb8c24-0964-4c5a-82fc-dfc80e29fce8"",
             ""actions"": [
                 {
@@ -90,15 +90,88 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SingleNote"",
+            ""id"": ""3ca655ef-0660-44dc-8a89-1c0612e19fa6"",
+            ""actions"": [
+                {
+                    ""name"": ""StrumGuitar"",
+                    ""type"": ""Button"",
+                    ""id"": ""b42fa0ea-ac40-4e11-9b56-d3284643558a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HammerOn"",
+                    ""type"": ""Button"",
+                    ""id"": ""1d7d495d-494a-482a-85a2-6c3950c1dd06"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""48a20042-8d58-4846-b157-bc5393775f9c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ae4901e6-0928-4f2c-b792-270622a5d45e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StrumGuitar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f8ab976-2dae-482d-a515-b3d18d879876"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HammerOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f372347-4078-4705-8030-33698c48982c"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // String1
-        m_String1 = asset.FindActionMap("String1", throwIfNotFound: true);
-        m_String1_MouseSlide = m_String1.FindAction("MouseSlide", throwIfNotFound: true);
-        m_String1_MouseClick = m_String1.FindAction("MouseClick", throwIfNotFound: true);
-        m_String1_MousePosition = m_String1.FindAction("MousePosition", throwIfNotFound: true);
+        // String
+        m_String = asset.FindActionMap("String", throwIfNotFound: true);
+        m_String_MouseSlide = m_String.FindAction("MouseSlide", throwIfNotFound: true);
+        m_String_MouseClick = m_String.FindAction("MouseClick", throwIfNotFound: true);
+        m_String_MousePosition = m_String.FindAction("MousePosition", throwIfNotFound: true);
+        // SingleNote
+        m_SingleNote = asset.FindActionMap("SingleNote", throwIfNotFound: true);
+        m_SingleNote_StrumGuitar = m_SingleNote.FindAction("StrumGuitar", throwIfNotFound: true);
+        m_SingleNote_HammerOn = m_SingleNote.FindAction("HammerOn", throwIfNotFound: true);
+        m_SingleNote_Mute = m_SingleNote.FindAction("Mute", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -157,28 +230,28 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // String1
-    private readonly InputActionMap m_String1;
-    private List<IString1Actions> m_String1ActionsCallbackInterfaces = new List<IString1Actions>();
-    private readonly InputAction m_String1_MouseSlide;
-    private readonly InputAction m_String1_MouseClick;
-    private readonly InputAction m_String1_MousePosition;
-    public struct String1Actions
+    // String
+    private readonly InputActionMap m_String;
+    private List<IStringActions> m_StringActionsCallbackInterfaces = new List<IStringActions>();
+    private readonly InputAction m_String_MouseSlide;
+    private readonly InputAction m_String_MouseClick;
+    private readonly InputAction m_String_MousePosition;
+    public struct StringActions
     {
         private @StringController m_Wrapper;
-        public String1Actions(@StringController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MouseSlide => m_Wrapper.m_String1_MouseSlide;
-        public InputAction @MouseClick => m_Wrapper.m_String1_MouseClick;
-        public InputAction @MousePosition => m_Wrapper.m_String1_MousePosition;
-        public InputActionMap Get() { return m_Wrapper.m_String1; }
+        public StringActions(@StringController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MouseSlide => m_Wrapper.m_String_MouseSlide;
+        public InputAction @MouseClick => m_Wrapper.m_String_MouseClick;
+        public InputAction @MousePosition => m_Wrapper.m_String_MousePosition;
+        public InputActionMap Get() { return m_Wrapper.m_String; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(String1Actions set) { return set.Get(); }
-        public void AddCallbacks(IString1Actions instance)
+        public static implicit operator InputActionMap(StringActions set) { return set.Get(); }
+        public void AddCallbacks(IStringActions instance)
         {
-            if (instance == null || m_Wrapper.m_String1ActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_String1ActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_StringActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_StringActionsCallbackInterfaces.Add(instance);
             @MouseSlide.started += instance.OnMouseSlide;
             @MouseSlide.performed += instance.OnMouseSlide;
             @MouseSlide.canceled += instance.OnMouseSlide;
@@ -190,7 +263,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @MousePosition.canceled += instance.OnMousePosition;
         }
 
-        private void UnregisterCallbacks(IString1Actions instance)
+        private void UnregisterCallbacks(IStringActions instance)
         {
             @MouseSlide.started -= instance.OnMouseSlide;
             @MouseSlide.performed -= instance.OnMouseSlide;
@@ -203,25 +276,93 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @MousePosition.canceled -= instance.OnMousePosition;
         }
 
-        public void RemoveCallbacks(IString1Actions instance)
+        public void RemoveCallbacks(IStringActions instance)
         {
-            if (m_Wrapper.m_String1ActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_StringActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IString1Actions instance)
+        public void SetCallbacks(IStringActions instance)
         {
-            foreach (var item in m_Wrapper.m_String1ActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_StringActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_String1ActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_StringActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public String1Actions @String1 => new String1Actions(this);
-    public interface IString1Actions
+    public StringActions @String => new StringActions(this);
+
+    // SingleNote
+    private readonly InputActionMap m_SingleNote;
+    private List<ISingleNoteActions> m_SingleNoteActionsCallbackInterfaces = new List<ISingleNoteActions>();
+    private readonly InputAction m_SingleNote_StrumGuitar;
+    private readonly InputAction m_SingleNote_HammerOn;
+    private readonly InputAction m_SingleNote_Mute;
+    public struct SingleNoteActions
+    {
+        private @StringController m_Wrapper;
+        public SingleNoteActions(@StringController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @StrumGuitar => m_Wrapper.m_SingleNote_StrumGuitar;
+        public InputAction @HammerOn => m_Wrapper.m_SingleNote_HammerOn;
+        public InputAction @Mute => m_Wrapper.m_SingleNote_Mute;
+        public InputActionMap Get() { return m_Wrapper.m_SingleNote; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SingleNoteActions set) { return set.Get(); }
+        public void AddCallbacks(ISingleNoteActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SingleNoteActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SingleNoteActionsCallbackInterfaces.Add(instance);
+            @StrumGuitar.started += instance.OnStrumGuitar;
+            @StrumGuitar.performed += instance.OnStrumGuitar;
+            @StrumGuitar.canceled += instance.OnStrumGuitar;
+            @HammerOn.started += instance.OnHammerOn;
+            @HammerOn.performed += instance.OnHammerOn;
+            @HammerOn.canceled += instance.OnHammerOn;
+            @Mute.started += instance.OnMute;
+            @Mute.performed += instance.OnMute;
+            @Mute.canceled += instance.OnMute;
+        }
+
+        private void UnregisterCallbacks(ISingleNoteActions instance)
+        {
+            @StrumGuitar.started -= instance.OnStrumGuitar;
+            @StrumGuitar.performed -= instance.OnStrumGuitar;
+            @StrumGuitar.canceled -= instance.OnStrumGuitar;
+            @HammerOn.started -= instance.OnHammerOn;
+            @HammerOn.performed -= instance.OnHammerOn;
+            @HammerOn.canceled -= instance.OnHammerOn;
+            @Mute.started -= instance.OnMute;
+            @Mute.performed -= instance.OnMute;
+            @Mute.canceled -= instance.OnMute;
+        }
+
+        public void RemoveCallbacks(ISingleNoteActions instance)
+        {
+            if (m_Wrapper.m_SingleNoteActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISingleNoteActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SingleNoteActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SingleNoteActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SingleNoteActions @SingleNote => new SingleNoteActions(this);
+    public interface IStringActions
     {
         void OnMouseSlide(InputAction.CallbackContext context);
         void OnMouseClick(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+    }
+    public interface ISingleNoteActions
+    {
+        void OnStrumGuitar(InputAction.CallbackContext context);
+        void OnHammerOn(InputAction.CallbackContext context);
+        void OnMute(InputAction.CallbackContext context);
     }
 }

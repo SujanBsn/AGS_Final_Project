@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class PlayNote : MonoBehaviour
 {
-    public AudioSource[] BaseSource =new AudioSource[6];
+    StringController StringController;
+    public AudioSource[] stringSource =new AudioSource[6];//A source for each string
     
-    void SetNote(int stringNum,float frequency)
+    /// <summary>
+    /// Set the note of the selected string
+    /// </summary>
+    public void SetNote(int stringNum,float frequency)
     {
-        BaseSource[stringNum].GetComponent<AudioSource>().pitch = frequency;
+        stringSource[stringNum - 1].pitch = frequency;
     }
 
-    public void strum()
+    /// <summary>
+    /// Strum the guitar.Delays are because not all clips start simultaneously
+    /// </summary>
+    public void Strum()
     {
-        for(int i = 0; i<6; i++)
-        {
-            BaseSource[5].Play();
-        }
+        stringSource[0].PlayDelayed(0f);   //High E
+        stringSource[1].PlayDelayed(.14f); //B
+        stringSource[2].PlayDelayed(.1f);  //G
+        stringSource[3].PlayDelayed(.12f); //D
+        stringSource[4].PlayDelayed(.2f);  //A
+        stringSource[5].PlayDelayed(0f);   //Low E
+    }
+
+    void Start()
+    {    
+
+        StringController = new StringController();
+        StringController.Enable();
+        StringController.SingleNote.StrumGuitar.started += _ => Strum();
     }
 }

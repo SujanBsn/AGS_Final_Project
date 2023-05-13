@@ -2,7 +2,7 @@
     "name": "StringControl",
     "maps": [
         {
-            "name": "String1",
+            "name": "String",
             "id": "8dcb8c24-0964-4c5a-82fc-dfc80e29fce8",
             "actions": [
                 {
@@ -64,6 +64,74 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "SingleNote",
+            "id": "3ca655ef-0660-44dc-8a89-1c0612e19fa6",
+            "actions": [
+                {
+                    "name": "StrumGuitar",
+                    "type": "Button",
+                    "id": "b42fa0ea-ac40-4e11-9b56-d3284643558a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HammerOn",
+                    "type": "Button",
+                    "id": "1d7d495d-494a-482a-85a2-6c3950c1dd06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mute",
+                    "type": "Button",
+                    "id": "48a20042-8d58-4846-b157-bc5393775f9c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ae4901e6-0928-4f2c-b792-270622a5d45e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StrumGuitar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f8ab976-2dae-482d-a515-b3d18d879876",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HammerOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f372347-4078-4705-8030-33698c48982c",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mute",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
