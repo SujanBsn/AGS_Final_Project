@@ -5,7 +5,7 @@ using UnityEngine;
 public class String1 : MonoBehaviour
 {
     public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
-    Vector2 startPosValue, endPosValue, bridgePosValue;
+    public Vector2 startPosValue, endPosValue, bridgePosValue;
 
     StringController StringController;
     PlayNote PlayNote;

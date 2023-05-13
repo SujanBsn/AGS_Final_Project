@@ -30,7 +30,6 @@ public class PlayNote : MonoBehaviour
 
     void Start()
     {    
-
         StringController = new StringController();
         StringController.Enable();
         StringController.SingleNote.StrumGuitar.started += _ => Strum();

@@ -83,7 +83,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HammerOn",
+                    "name": "Bend",
                     "type": "Button",
                     "id": "1d7d495d-494a-482a-85a2-6c3950c1dd06",
                     "expectedControlType": "Button",
@@ -120,7 +120,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HammerOn",
+                    "action": "Bend",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

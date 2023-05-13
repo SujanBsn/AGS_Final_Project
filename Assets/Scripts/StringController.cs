@@ -105,7 +105,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""HammerOn"",
+                    ""name"": ""Bend"",
                     ""type"": ""Button"",
                     ""id"": ""1d7d495d-494a-482a-85a2-6c3950c1dd06"",
                     ""expectedControlType"": ""Button"",
@@ -142,7 +142,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HammerOn"",
+                    ""action"": ""Bend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -170,7 +170,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         // SingleNote
         m_SingleNote = asset.FindActionMap("SingleNote", throwIfNotFound: true);
         m_SingleNote_StrumGuitar = m_SingleNote.FindAction("StrumGuitar", throwIfNotFound: true);
-        m_SingleNote_HammerOn = m_SingleNote.FindAction("HammerOn", throwIfNotFound: true);
+        m_SingleNote_Bend = m_SingleNote.FindAction("Bend", throwIfNotFound: true);
         m_SingleNote_Mute = m_SingleNote.FindAction("Mute", throwIfNotFound: true);
     }
 
@@ -296,14 +296,14 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_SingleNote;
     private List<ISingleNoteActions> m_SingleNoteActionsCallbackInterfaces = new List<ISingleNoteActions>();
     private readonly InputAction m_SingleNote_StrumGuitar;
-    private readonly InputAction m_SingleNote_HammerOn;
+    private readonly InputAction m_SingleNote_Bend;
     private readonly InputAction m_SingleNote_Mute;
     public struct SingleNoteActions
     {
         private @StringController m_Wrapper;
         public SingleNoteActions(@StringController wrapper) { m_Wrapper = wrapper; }
         public InputAction @StrumGuitar => m_Wrapper.m_SingleNote_StrumGuitar;
-        public InputAction @HammerOn => m_Wrapper.m_SingleNote_HammerOn;
+        public InputAction @Bend => m_Wrapper.m_SingleNote_Bend;
         public InputAction @Mute => m_Wrapper.m_SingleNote_Mute;
         public InputActionMap Get() { return m_Wrapper.m_SingleNote; }
         public void Enable() { Get().Enable(); }
@@ -317,9 +317,9 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @StrumGuitar.started += instance.OnStrumGuitar;
             @StrumGuitar.performed += instance.OnStrumGuitar;
             @StrumGuitar.canceled += instance.OnStrumGuitar;
-            @HammerOn.started += instance.OnHammerOn;
-            @HammerOn.performed += instance.OnHammerOn;
-            @HammerOn.canceled += instance.OnHammerOn;
+            @Bend.started += instance.OnBend;
+            @Bend.performed += instance.OnBend;
+            @Bend.canceled += instance.OnBend;
             @Mute.started += instance.OnMute;
             @Mute.performed += instance.OnMute;
             @Mute.canceled += instance.OnMute;
@@ -330,9 +330,9 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @StrumGuitar.started -= instance.OnStrumGuitar;
             @StrumGuitar.performed -= instance.OnStrumGuitar;
             @StrumGuitar.canceled -= instance.OnStrumGuitar;
-            @HammerOn.started -= instance.OnHammerOn;
-            @HammerOn.performed -= instance.OnHammerOn;
-            @HammerOn.canceled -= instance.OnHammerOn;
+            @Bend.started -= instance.OnBend;
+            @Bend.performed -= instance.OnBend;
+            @Bend.canceled -= instance.OnBend;
             @Mute.started -= instance.OnMute;
             @Mute.performed -= instance.OnMute;
             @Mute.canceled -= instance.OnMute;
@@ -362,7 +362,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     public interface ISingleNoteActions
     {
         void OnStrumGuitar(InputAction.CallbackContext context);
-        void OnHammerOn(InputAction.CallbackContext context);
+        void OnBend(InputAction.CallbackContext context);
         void OnMute(InputAction.CallbackContext context);
     }
 }
