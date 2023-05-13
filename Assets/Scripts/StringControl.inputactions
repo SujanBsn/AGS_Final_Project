@@ -3,34 +3,6 @@
     "maps": [
         {
             "name": "String",
-            "id": "8dcb8c24-0964-4c5a-82fc-dfc80e29fce8",
-            "actions": [
-                {
-                    "name": "MouseClick",
-                    "type": "Value",
-                    "id": "d6598174-5547-4c66-a220-653c825e03a7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "f9e1afff-e7a1-4cc0-9e2f-7fba73a969d5",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "SingleNote",
             "id": "3ca655ef-0660-44dc-8a89-1c0612e19fa6",
             "actions": [
                 {
@@ -55,6 +27,15 @@
                     "name": "Mute",
                     "type": "Button",
                     "id": "48a20042-8d58-4846-b157-bc5393775f9c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseClick",
+                    "type": "Button",
+                    "id": "3e1297f3-1c8e-448e-8cc6-989a6d902a2b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -92,6 +73,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e09ace4-2047-4254-ad9a-590c45e56339",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

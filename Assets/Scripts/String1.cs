@@ -5,15 +5,14 @@ using UnityEngine.InputSystem;
 
 public class String1 : MonoBehaviour
 {
+    PlayNote PlayNote;
+
     public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
     public Vector2 startPosValue, endPosValue, bridgePosValue;
 
-    StringController StringController;
-    PlayNote PlayNote;
+    public static double[] nutToFret = new double[20];//To store the position of each fret
 
-    static double[] nutToFret = new double[20];
-
-    bool pressed = false, onMover1 = false;  //to check if the mover is pressed
+    bool onMover1 = false;  //to check if the mover is pressed
     int slideCounter = 0; //to check how many times the mover has been pressed for sliding
 
     private void Start()
@@ -22,10 +21,7 @@ public class String1 : MonoBehaviour
         endPosValue = endPos.transform.position;
         bridgePosValue = bridgePos.transform.position;
 
-        StringController = new StringController();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>(); //Because this script is a component of any object
-
-        StringController.Enable();
         CalculateFretPosition();
     }
 
@@ -140,8 +136,6 @@ public class String1 : MonoBehaviour
         {
             Slide();
         }
-
-        Debug.Log("slideCounter: " + slideCounter + "  Pressed: " + pressed + "  onMover1: " + onMover1);
     }
 
     /// <summary>

@@ -3,9 +3,7 @@ using UnityEngine.InputSystem;
 
 public class HammerOn : MonoBehaviour
 {
-    PlayerInput PlayerInput;
     String1 String1;
-    StringController StringController;
 
     bool selectForHammer = false;
 
@@ -13,7 +11,7 @@ public class HammerOn : MonoBehaviour
     {
         if(context.started) 
         {
-           
+            Debug.Log("Hammer");
         }
     }
 
