@@ -53,23 +53,10 @@ public class String1 : MonoBehaviour
     /// </summary>
     public void BeginSlide(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
+        if (onMover1)
             slideCounter++;
-            if (slideCounter < 2)
-            {
-                pressed = false;
-            }
-            else if (slideCounter == 2)
-            {
-                pressed = true;
-            }
-            else
-            {
-                pressed = false;
-                slideCounter = 0;
-            }
-        }
+
+        slideCounter = slideCounter > 1 ? 0 : slideCounter;
     }
 
     /// <summary>
@@ -77,14 +64,12 @@ public class String1 : MonoBehaviour
         /// </summary>
     public void Slide()
     {
-
         float slope = CalculateSlope();
 
         Vector2 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //To make sure the mover stays on the string, we use :: y-y1 = m(x-x1)
         mouseLocation.y = startPosValue.y + slope * (mouseLocation.x - startPosValue.x);
-
-        mover.transform.position = mouseLocation;/*Vector3.MoveTowards(mover.transform.position, mouseLocation, .1f);*/
+        mover.transform.position = mouseLocation;
         CheckPosition();
     }
 
@@ -151,10 +136,12 @@ public class String1 : MonoBehaviour
     void Update()
     {
         SetFretNum();
-        if (pressed && onMover1)
+        if (slideCounter == 1)
         {
             Slide();
         }
+
+        Debug.Log("slideCounter: " + slideCounter + "  Pressed: " + pressed + "  onMover1: " + onMover1);
     }
 
     /// <summary>
@@ -168,5 +155,21 @@ public class String1 : MonoBehaviour
         moverPos = moverPos.x <= endPosValue.x ? endPosValue : moverPos;
 
         mover.transform.position = moverPos;
+    }
+
+    /// <summary>
+    /// TO detect when we enter the mover
+    /// </summary>
+    private void OnMouseEnter()
+    {
+        onMover1 = true;
+    }
+
+    /// <summary>
+    /// TO detect when we exit the mover after enabling the slider
+    /// </summary>
+    private void OnMouseExit()
+    {
+        onMover1 = false;
     }
 }
