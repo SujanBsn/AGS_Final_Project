@@ -7,7 +7,7 @@ public class String6 : MonoBehaviour
     PlayNote PlayNote;
 
     public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
-    public Vector2 startPosValue, endPosValue, bridgePosValue; //To store the value of constantly used positions
+    public Vector2 startPosValue, endPosValue, bridgePosValue, currentPos, lastPos; //To store the value of constantly used positions
 
     public static double[] nutToFret = new double[20];//To store the position of each fret
 
@@ -19,6 +19,7 @@ public class String6 : MonoBehaviour
         startPosValue = startPos.transform.position;
         endPosValue = endPos.transform.position;
         bridgePosValue = bridgePos.transform.position;
+        lastPos = startPosValue;
 
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>(); //Because this script is a component of any object
         CalculateFretPosition();
@@ -133,7 +134,12 @@ public class String6 : MonoBehaviour
 
     void Update()
     {
-        SetFretNum();
+        currentPos = mover.transform.position;
+        if(currentPos.x!=lastPos.x)
+            SetFretNum();
+
+        lastPos = currentPos;
+
         if (slideCounter == 1)
         {
             Slide();

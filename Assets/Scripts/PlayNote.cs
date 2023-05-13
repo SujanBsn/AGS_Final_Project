@@ -13,7 +13,8 @@ public class PlayNote : MonoBehaviour
     public void SetNote(int stringNum,float frequency)
     {
         stringSource[stringNum - 1].pitch = frequency;
-    }
+        Debug.Log(frequency);
+    }  
 
     /// <summary>
     /// Strum the guitar.Delays are because not all clips start simultaneously

@@ -43,7 +43,6 @@ public class BendString6 : MonoBehaviour
             if (bendCounter == 1)
             {
                 YSlide();
-                PlayNote.SetNote(5, frequency);
                 PlayNote.PlaySingleString(5);
             }
             if (bendCounter >= 2)
@@ -60,20 +59,36 @@ public class BendString6 : MonoBehaviour
     /// </summary>
     public void YSlide()
     {
+        float y_Min = y_Coords - .6f;
+        float y_Max = y_Coords + .2f;
+
         Vector2 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseLocation.x = x_Coords;
-        mouseLocation.y = math.clamp(mouseLocation.y, y_Coords - .2f, y_Coords + .3f);
+        mouseLocation.y = math.clamp(mouseLocation.y, y_Min, y_Max);
+
         mover.transform.position = mouseLocation;
-
-
     }
+
+    /// <summary>
+    /// Set the frequency relative to the y position
+    /// </summary>
+    public void SetYFreq()
+    {
+        Vector2 moverLocation = String6.mover.transform.position;
+
+        frequency = 1 + math.abs(moverLocation.y - y_Coords) / (1.2f);
+        PlayNote.SetNote(6, frequency);
+    }
+
 
     private void Update()
     {
+        SetYFreq();
         if (bendCounter == 1)
         {
             YSlide();
         }
+
     }
 
     /// <summary>
