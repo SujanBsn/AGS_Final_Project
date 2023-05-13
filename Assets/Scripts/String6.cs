@@ -1,14 +1,13 @@
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class String1 : MonoBehaviour
+public class String6 : MonoBehaviour
 {
     PlayNote PlayNote;
 
     public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
-    public Vector2 startPosValue, endPosValue, bridgePosValue;
+    public Vector2 startPosValue, endPosValue, bridgePosValue; //To store the value of constantly used positions
 
     public static double[] nutToFret = new double[20];//To store the position of each fret
 
@@ -49,10 +48,13 @@ public class String1 : MonoBehaviour
     /// </summary>
     public void BeginSlide(InputAction.CallbackContext context)
     {
-        if (onMover1)
-            slideCounter++;
+        if (context.started)
+        {
+            if (onMover1)
+                slideCounter++;
 
-        slideCounter = slideCounter > 1 ? 0 : slideCounter;
+            slideCounter = slideCounter > 1 ? 0 : slideCounter;
+        }
     }
 
     /// <summary>
@@ -152,7 +154,7 @@ public class String1 : MonoBehaviour
     }
 
     /// <summary>
-    /// TO detect when we enter the mover
+    /// To detect when we enter the mover
     /// </summary>
     private void OnMouseEnter()
     {
@@ -160,7 +162,7 @@ public class String1 : MonoBehaviour
     }
 
     /// <summary>
-    /// TO detect when we exit the mover after enabling the slider
+    /// To detect when we exit the mover after enabling the slider
     /// </summary>
     private void OnMouseExit()
     {

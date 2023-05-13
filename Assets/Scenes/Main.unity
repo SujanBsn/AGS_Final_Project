@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 50472120}
   - component: {fileID: 50472119}
   m_Layer: 0
-  m_Name: String1End
+  m_Name: String6End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,6 +1062,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3e1297f3-1c8e-448e-8cc6-989a6d902a2b
     m_ActionName: String/MouseClick[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1335cc5-250d-4c91-b6ab-b55eebfeeed3
+    m_ActionName: String/PlayHammerNote[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: String
@@ -1077,7 +1081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1092452020}
   m_Layer: 0
-  m_Name: String1
+  m_Name: String6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1277,7 +1281,7 @@ GameObject:
   - component: {fileID: 1778436230}
   - component: {fileID: 1778436231}
   m_Layer: 0
-  m_Name: String1Start
+  m_Name: String6Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,7 +1370,7 @@ GameObject:
   - component: {fileID: 1982890190}
   - component: {fileID: 1982890191}
   m_Layer: 0
-  m_Name: String1Mover
+  m_Name: String6Mover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,6 +1587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4d7335ccad2a343b3c92279efd21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  String1: {fileID: 0}
+  PlayNote: {fileID: 0}
+  selectForHammer: 0
+  onMover1: 0
+  hammerCounter: 0
 --- !u!114 &1982890191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,7 +1673,7 @@ GameObject:
   - component: {fileID: 2059715524}
   - component: {fileID: 2059715525}
   m_Layer: 0
-  m_Name: String1Bridge
+  m_Name: String6Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayNote : MonoBehaviour
 {
-    String1 String1;
+    String6 String6;
     public AudioSource[] stringSource =new AudioSource[6];//A source for each string
-    
     /// <summary>
     /// Set the note of the selected string
     /// </summary>
@@ -32,11 +31,8 @@ public class PlayNote : MonoBehaviour
         }
     }
 
-    public void HammerOnNote(InputAction.CallbackContext context)
+    public void PlaySingleString(int stringNum)
     {
-        if(context.started)
-        {
-
-        }
+        stringSource[stringNum].Play();
     }
 }
