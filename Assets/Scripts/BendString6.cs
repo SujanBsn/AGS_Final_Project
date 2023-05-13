@@ -10,9 +10,9 @@ public class BendString6 : MonoBehaviour
     String6 String6;
     PlayNote PlayNote;
     GameObject mover;
-    Vector2 moverPos;
+    Vector2 moverPos,currentPos,lastPos;
 
-    float x_Coords, y_Coords, frequency = 1;
+    float x_Coords, y_Coords, frequency = 1, playFreq = 1;
 
     int bendCounter = 0;
     bool onMover = false;
@@ -21,6 +21,7 @@ public class BendString6 : MonoBehaviour
         String6 = GetComponent<String6>();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>();
         mover = String6.mover;
+        lastPos = mover.transform.position;
 
     }
     /// <summary>
@@ -32,6 +33,7 @@ public class BendString6 : MonoBehaviour
         {
             if (bendCounter == 0)
             {
+                frequency = PlayNote.stringSource[5].pitch;
                 moverPos = mover.transform.position;
                 x_Coords = moverPos.x;
                 y_Coords = moverPos.y;
@@ -75,15 +77,19 @@ public class BendString6 : MonoBehaviour
     public void SetYFreq()
     {
         Vector2 moverLocation = String6.mover.transform.position;
-
-        frequency = 1 + math.abs(moverLocation.y - y_Coords) / (1.2f);
-        PlayNote.SetNote(6, frequency);
+        playFreq = frequency * (1 + math.abs(moverLocation.y - y_Coords) / (.6f));
+        PlayNote.SetNote(6, playFreq);
+        playFreq = 1;
     }
 
 
     private void Update()
     {
-        SetYFreq();
+        currentPos = String6.mover.transform.position;
+        if(currentPos.y!=lastPos.y)
+            SetYFreq();
+        lastPos = currentPos;
+
         if (bendCounter == 1)
         {
             YSlide();

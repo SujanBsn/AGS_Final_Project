@@ -135,9 +135,8 @@ public class String6 : MonoBehaviour
     void Update()
     {
         currentPos = mover.transform.position;
-        if(currentPos.x!=lastPos.x)
+        if(currentPos.x!=lastPos.x)   //To let frequency change when we play bend note
             SetFretNum();
-
         lastPos = currentPos;
 
         if (slideCounter == 1)
