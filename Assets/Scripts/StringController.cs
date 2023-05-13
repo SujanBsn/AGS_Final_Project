@@ -62,6 +62,15 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Bend"",
+                    ""type"": ""Button"",
+                    ""id"": ""f2497e21-6017-40d5-8c38-49170cfb12c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,17 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""action"": ""MouseClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""facba7df-63bb-4e4c-b5d6-462f24360eaf"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         m_String_HammerNote = m_String.FindAction("HammerNote", throwIfNotFound: true);
         m_String_Mute = m_String.FindAction("Mute", throwIfNotFound: true);
         m_String_MouseClick = m_String.FindAction("MouseClick", throwIfNotFound: true);
+        m_String_Bend = m_String.FindAction("Bend", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +206,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     private readonly InputAction m_String_HammerNote;
     private readonly InputAction m_String_Mute;
     private readonly InputAction m_String_MouseClick;
+    private readonly InputAction m_String_Bend;
     public struct StringActions
     {
         private @StringController m_Wrapper;
@@ -193,6 +215,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         public InputAction @HammerNote => m_Wrapper.m_String_HammerNote;
         public InputAction @Mute => m_Wrapper.m_String_Mute;
         public InputAction @MouseClick => m_Wrapper.m_String_MouseClick;
+        public InputAction @Bend => m_Wrapper.m_String_Bend;
         public InputActionMap Get() { return m_Wrapper.m_String; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +237,9 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @MouseClick.started += instance.OnMouseClick;
             @MouseClick.performed += instance.OnMouseClick;
             @MouseClick.canceled += instance.OnMouseClick;
+            @Bend.started += instance.OnBend;
+            @Bend.performed += instance.OnBend;
+            @Bend.canceled += instance.OnBend;
         }
 
         private void UnregisterCallbacks(IStringActions instance)
@@ -230,6 +256,9 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @MouseClick.started -= instance.OnMouseClick;
             @MouseClick.performed -= instance.OnMouseClick;
             @MouseClick.canceled -= instance.OnMouseClick;
+            @Bend.started -= instance.OnBend;
+            @Bend.performed -= instance.OnBend;
+            @Bend.canceled -= instance.OnBend;
         }
 
         public void RemoveCallbacks(IStringActions instance)
@@ -253,5 +282,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         void OnHammerNote(InputAction.CallbackContext context);
         void OnMute(InputAction.CallbackContext context);
         void OnMouseClick(InputAction.CallbackContext context);
+        void OnBend(InputAction.CallbackContext context);
     }
 }

@@ -43,7 +43,7 @@ public class HammerOn6 : MonoBehaviour
     }
 
     /// <summary>
-    /// To detect when we exit the mover after enabling the slider
+    /// To detect when we exit the mover
     /// </summary>
     private void OnMouseExit()
     {

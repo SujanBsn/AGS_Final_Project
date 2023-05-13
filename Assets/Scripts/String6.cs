@@ -162,8 +162,7 @@ public class String6 : MonoBehaviour
     }
 
     /// <summary>
-    /// To detect when we exit the mover after enabling the slider
-    /// </summary>
+    /// To detect when we exit the mover
     private void OnMouseExit()
     {
         onMover1 = false;

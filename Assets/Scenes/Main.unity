@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 55308694}
   - component: {fileID: 55308695}
   m_Layer: 0
-  m_Name: String1Mute
+  m_Name: String6Mute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,10 +1062,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3e1297f3-1c8e-448e-8cc6-989a6d902a2b
     m_ActionName: String/MouseClick[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c1335cc5-250d-4c91-b6ab-b55eebfeeed3
-    m_ActionName: String/PlayHammerNote[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: String
@@ -1369,6 +1365,7 @@ GameObject:
   - component: {fileID: 1982890189}
   - component: {fileID: 1982890190}
   - component: {fileID: 1982890191}
+  - component: {fileID: 1982890192}
   m_Layer: 0
   m_Name: String6Mover
   m_TagString: Untagged
@@ -1587,11 +1584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4d7335ccad2a343b3c92279efd21f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  String1: {fileID: 0}
-  PlayNote: {fileID: 0}
-  selectForHammer: 0
-  onMover1: 0
-  hammerCounter: 0
 --- !u!114 &1982890191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,11 +1649,39 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3e1297f3-1c8e-448e-8cc6-989a6d902a2b
     m_ActionName: String/MouseClick[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982890192}
+        m_TargetAssemblyTypeName: BendString6, Assembly-CSharp
+        m_MethodName: OnBendString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f2497e21-6017-40d5-8c38-49170cfb12c8
+    m_ActionName: String/Bend[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: String
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1982890192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982890184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f708aeb5c1e15d4db34a4d84e37382d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059715523
 GameObject:
   m_ObjectHideFlags: 0
