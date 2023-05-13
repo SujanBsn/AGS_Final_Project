@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HammerOn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    PlayerInput PlayerInput;
+    String1 String1;
+    StringController StringController;
+
+    bool selectForHammer = false;
+
+    public void OnHammerNote(InputAction.CallbackContext context)
     {
-        
+        if(context.started) 
+        {
+           
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseEnter()
     {
-        
+        selectForHammer = true;
+    }
+
+    private void Update()
+    {
+
     }
 }

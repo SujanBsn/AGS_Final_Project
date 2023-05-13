@@ -1,6 +1,7 @@
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class String1 : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class String1 : MonoBehaviour
 
     static double[] nutToFret = new double[20];
 
-    bool pressed = false;  //to check if the mover is pressed
+    bool pressed = false, onMover1 = false;  //to check if the mover is pressed
+    int slideCounter = 0; //to check how many times the mover has been pressed for sliding
 
     private void Start()
     {
@@ -26,7 +28,6 @@ public class String1 : MonoBehaviour
         StringController.Enable();
         CalculateFretPosition();
     }
-
 
     /// <summary>
     /// Calculate and store the position of each fret from the nut and the bridge
@@ -48,19 +49,43 @@ public class String1 : MonoBehaviour
     }
 
     /// <summary>
-    /// Slides the mover in the direction of the mouse
+    /// Sets the beginning and ending of sliding on the string
     /// </summary>
+    public void BeginSlide(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            slideCounter++;
+            if (slideCounter < 2)
+            {
+                pressed = false;
+            }
+            else if (slideCounter == 2)
+            {
+                pressed = true;
+            }
+            else
+            {
+                pressed = false;
+                slideCounter = 0;
+            }
+        }
+    }
+
+    /// <summary>
+        /// Slides the mover in the direction of the mouse
+        /// </summary>
     public void Slide()
     {
-        if (pressed)
-        {
-            float slope=CalculateSlope();
 
-            Vector2 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //To make sure the mover stays on the string, we use :: y-y1 = m(x-x1)
-            mouseLocation.y = startPosValue.y + slope * (mouseLocation.x - startPosValue.x);
-            mover.transform.position = Vector3.MoveTowards(mover.transform.position, mouseLocation, 1f);
-        }
+        float slope = CalculateSlope();
+
+        Vector2 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //To make sure the mover stays on the string, we use :: y-y1 = m(x-x1)
+        mouseLocation.y = startPosValue.y + slope * (mouseLocation.x - startPosValue.x);
+
+        mover.transform.position = mouseLocation;/*Vector3.MoveTowards(mover.transform.position, mouseLocation, .1f);*/
+        CheckPosition();
     }
 
     /// <summary>
@@ -125,13 +150,11 @@ public class String1 : MonoBehaviour
 
     void Update()
     {
-        if (!pressed)
-        {
-            StringController.String.MouseSlide.Disable();
-        }
-
         SetFretNum();
-        CheckPosition();
+        if (pressed && onMover1)
+        {
+            Slide();
+        }
     }
 
     /// <summary>
@@ -145,13 +168,5 @@ public class String1 : MonoBehaviour
         moverPos = moverPos.x <= endPosValue.x ? endPosValue : moverPos;
 
         mover.transform.position = moverPos;
-    }
-
-    private void OnMouseDown()
-    {
-        StringController.String.MouseSlide.Enable();
-        StringController.String.MouseClick.started += _ => pressed = true;
-        StringController.String.MouseSlide.performed += _ => Slide();
-        StringController.String.MouseClick.canceled += _ => pressed = false;
     }
 }

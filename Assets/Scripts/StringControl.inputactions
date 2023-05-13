@@ -6,28 +6,10 @@
             "id": "8dcb8c24-0964-4c5a-82fc-dfc80e29fce8",
             "actions": [
                 {
-                    "name": "MouseSlide",
+                    "name": "MouseClick",
                     "type": "Value",
                     "id": "d6598174-5547-4c66-a220-653c825e03a7",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "MouseClick",
-                    "type": "Button",
-                    "id": "a3e8d998-a947-432c-847c-d6e7f51b8b5a",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MousePosition",
-                    "type": "Value",
-                    "id": "1eafb6f8-dd3f-4182-9dfd-3a59fb1083dd",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -36,34 +18,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "55236b10-dffb-48f0-8883-5a934e6df37d",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseSlide",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d00bfd25-3430-462a-a7c3-0652c45dd86f",
+                    "id": "f9e1afff-e7a1-4cc0-9e2f-7fba73a969d5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "MouseClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "194afc26-0333-45fc-a2c3-09e4125b3671",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -83,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bend",
+                    "name": "HammerNote",
                     "type": "Button",
                     "id": "1d7d495d-494a-482a-85a2-6c3950c1dd06",
                     "expectedControlType": "Button",
@@ -120,7 +80,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bend",
+                    "action": "HammerNote",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
