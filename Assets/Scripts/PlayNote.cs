@@ -9,9 +9,9 @@ public class PlayNote : MonoBehaviour
     /// <summary>
     /// Set the note of the selected string
     /// </summary>
-    public void SetNote(int stringNum,float frequency)
+    public void SetNote(int stringNumber,float frequency)
     {
-        stringSource[stringNum - 1].pitch = frequency;
+        stringSource[stringNumber - 1].pitch = frequency;
     }  
 
     /// <summary>

@@ -46,15 +46,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Mute"",
-                    ""type"": ""Button"",
-                    ""id"": ""48a20042-8d58-4846-b157-bc5393775f9c"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""MouseClick"",
                     ""type"": ""Button"",
                     ""id"": ""3e1297f3-1c8e-448e-8cc6-989a6d902a2b"",
@@ -98,17 +89,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3f372347-4078-4705-8030-33698c48982c"",
-                    ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Mute"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1e09ace4-2047-4254-ad9a-590c45e56339"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -130,6 +110,134 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""StringMute"",
+            ""id"": ""8733a1fa-d50a-4426-9499-5cf80b5ed31e"",
+            ""actions"": [
+                {
+                    ""name"": ""String1Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""282cacbb-41fc-49f6-97f2-6c836bd3f3fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String2Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a082c52-c6a0-4668-9438-d77ebeb733a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String3Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""917c8c40-fe55-4b96-b627-3517e187aa44"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String4Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4089348-94ef-4f94-9b1b-ef253bd38c4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String5Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""9317011f-8e96-4de1-8196-f16c83e6a9b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String6Mute"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9a6a903-d983-4252-93bd-f5fe32d27c54"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d8eab2f4-0ed8-45ae-a326-4b61e2509b8a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String1Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f165bcb6-6f49-47fe-9ec7-b99622e5ee0e"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String2Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1b89cb1-258b-4297-b2f0-dfda5430f2dc"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String3Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89e4bd51-13cc-4b85-b3ce-4f1833306856"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String4Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee1bee2f-3b9d-4708-8b42-a248c9219641"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String5Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb55e703-2b13-4ede-987f-8f287367352d"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String6Mute"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -138,9 +246,16 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         m_StringControls = asset.FindActionMap("StringControls", throwIfNotFound: true);
         m_StringControls_StrumGuitar = m_StringControls.FindAction("StrumGuitar", throwIfNotFound: true);
         m_StringControls_HammerNote = m_StringControls.FindAction("HammerNote", throwIfNotFound: true);
-        m_StringControls_Mute = m_StringControls.FindAction("Mute", throwIfNotFound: true);
         m_StringControls_MouseClick = m_StringControls.FindAction("MouseClick", throwIfNotFound: true);
         m_StringControls_Bend = m_StringControls.FindAction("Bend", throwIfNotFound: true);
+        // StringMute
+        m_StringMute = asset.FindActionMap("StringMute", throwIfNotFound: true);
+        m_StringMute_String1Mute = m_StringMute.FindAction("String1Mute", throwIfNotFound: true);
+        m_StringMute_String2Mute = m_StringMute.FindAction("String2Mute", throwIfNotFound: true);
+        m_StringMute_String3Mute = m_StringMute.FindAction("String3Mute", throwIfNotFound: true);
+        m_StringMute_String4Mute = m_StringMute.FindAction("String4Mute", throwIfNotFound: true);
+        m_StringMute_String5Mute = m_StringMute.FindAction("String5Mute", throwIfNotFound: true);
+        m_StringMute_String6Mute = m_StringMute.FindAction("String6Mute", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -204,7 +319,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     private List<IStringControlsActions> m_StringControlsActionsCallbackInterfaces = new List<IStringControlsActions>();
     private readonly InputAction m_StringControls_StrumGuitar;
     private readonly InputAction m_StringControls_HammerNote;
-    private readonly InputAction m_StringControls_Mute;
     private readonly InputAction m_StringControls_MouseClick;
     private readonly InputAction m_StringControls_Bend;
     public struct StringControlsActions
@@ -213,7 +327,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         public StringControlsActions(@StringController wrapper) { m_Wrapper = wrapper; }
         public InputAction @StrumGuitar => m_Wrapper.m_StringControls_StrumGuitar;
         public InputAction @HammerNote => m_Wrapper.m_StringControls_HammerNote;
-        public InputAction @Mute => m_Wrapper.m_StringControls_Mute;
         public InputAction @MouseClick => m_Wrapper.m_StringControls_MouseClick;
         public InputAction @Bend => m_Wrapper.m_StringControls_Bend;
         public InputActionMap Get() { return m_Wrapper.m_StringControls; }
@@ -231,9 +344,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @HammerNote.started += instance.OnHammerNote;
             @HammerNote.performed += instance.OnHammerNote;
             @HammerNote.canceled += instance.OnHammerNote;
-            @Mute.started += instance.OnMute;
-            @Mute.performed += instance.OnMute;
-            @Mute.canceled += instance.OnMute;
             @MouseClick.started += instance.OnMouseClick;
             @MouseClick.performed += instance.OnMouseClick;
             @MouseClick.canceled += instance.OnMouseClick;
@@ -250,9 +360,6 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @HammerNote.started -= instance.OnHammerNote;
             @HammerNote.performed -= instance.OnHammerNote;
             @HammerNote.canceled -= instance.OnHammerNote;
-            @Mute.started -= instance.OnMute;
-            @Mute.performed -= instance.OnMute;
-            @Mute.canceled -= instance.OnMute;
             @MouseClick.started -= instance.OnMouseClick;
             @MouseClick.performed -= instance.OnMouseClick;
             @MouseClick.canceled -= instance.OnMouseClick;
@@ -276,12 +383,106 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         }
     }
     public StringControlsActions @StringControls => new StringControlsActions(this);
+
+    // StringMute
+    private readonly InputActionMap m_StringMute;
+    private List<IStringMuteActions> m_StringMuteActionsCallbackInterfaces = new List<IStringMuteActions>();
+    private readonly InputAction m_StringMute_String1Mute;
+    private readonly InputAction m_StringMute_String2Mute;
+    private readonly InputAction m_StringMute_String3Mute;
+    private readonly InputAction m_StringMute_String4Mute;
+    private readonly InputAction m_StringMute_String5Mute;
+    private readonly InputAction m_StringMute_String6Mute;
+    public struct StringMuteActions
+    {
+        private @StringController m_Wrapper;
+        public StringMuteActions(@StringController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @String1Mute => m_Wrapper.m_StringMute_String1Mute;
+        public InputAction @String2Mute => m_Wrapper.m_StringMute_String2Mute;
+        public InputAction @String3Mute => m_Wrapper.m_StringMute_String3Mute;
+        public InputAction @String4Mute => m_Wrapper.m_StringMute_String4Mute;
+        public InputAction @String5Mute => m_Wrapper.m_StringMute_String5Mute;
+        public InputAction @String6Mute => m_Wrapper.m_StringMute_String6Mute;
+        public InputActionMap Get() { return m_Wrapper.m_StringMute; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StringMuteActions set) { return set.Get(); }
+        public void AddCallbacks(IStringMuteActions instance)
+        {
+            if (instance == null || m_Wrapper.m_StringMuteActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_StringMuteActionsCallbackInterfaces.Add(instance);
+            @String1Mute.started += instance.OnString1Mute;
+            @String1Mute.performed += instance.OnString1Mute;
+            @String1Mute.canceled += instance.OnString1Mute;
+            @String2Mute.started += instance.OnString2Mute;
+            @String2Mute.performed += instance.OnString2Mute;
+            @String2Mute.canceled += instance.OnString2Mute;
+            @String3Mute.started += instance.OnString3Mute;
+            @String3Mute.performed += instance.OnString3Mute;
+            @String3Mute.canceled += instance.OnString3Mute;
+            @String4Mute.started += instance.OnString4Mute;
+            @String4Mute.performed += instance.OnString4Mute;
+            @String4Mute.canceled += instance.OnString4Mute;
+            @String5Mute.started += instance.OnString5Mute;
+            @String5Mute.performed += instance.OnString5Mute;
+            @String5Mute.canceled += instance.OnString5Mute;
+            @String6Mute.started += instance.OnString6Mute;
+            @String6Mute.performed += instance.OnString6Mute;
+            @String6Mute.canceled += instance.OnString6Mute;
+        }
+
+        private void UnregisterCallbacks(IStringMuteActions instance)
+        {
+            @String1Mute.started -= instance.OnString1Mute;
+            @String1Mute.performed -= instance.OnString1Mute;
+            @String1Mute.canceled -= instance.OnString1Mute;
+            @String2Mute.started -= instance.OnString2Mute;
+            @String2Mute.performed -= instance.OnString2Mute;
+            @String2Mute.canceled -= instance.OnString2Mute;
+            @String3Mute.started -= instance.OnString3Mute;
+            @String3Mute.performed -= instance.OnString3Mute;
+            @String3Mute.canceled -= instance.OnString3Mute;
+            @String4Mute.started -= instance.OnString4Mute;
+            @String4Mute.performed -= instance.OnString4Mute;
+            @String4Mute.canceled -= instance.OnString4Mute;
+            @String5Mute.started -= instance.OnString5Mute;
+            @String5Mute.performed -= instance.OnString5Mute;
+            @String5Mute.canceled -= instance.OnString5Mute;
+            @String6Mute.started -= instance.OnString6Mute;
+            @String6Mute.performed -= instance.OnString6Mute;
+            @String6Mute.canceled -= instance.OnString6Mute;
+        }
+
+        public void RemoveCallbacks(IStringMuteActions instance)
+        {
+            if (m_Wrapper.m_StringMuteActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IStringMuteActions instance)
+        {
+            foreach (var item in m_Wrapper.m_StringMuteActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_StringMuteActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public StringMuteActions @StringMute => new StringMuteActions(this);
     public interface IStringControlsActions
     {
         void OnStrumGuitar(InputAction.CallbackContext context);
         void OnHammerNote(InputAction.CallbackContext context);
-        void OnMute(InputAction.CallbackContext context);
         void OnMouseClick(InputAction.CallbackContext context);
         void OnBend(InputAction.CallbackContext context);
+    }
+    public interface IStringMuteActions
+    {
+        void OnString1Mute(InputAction.CallbackContext context);
+        void OnString2Mute(InputAction.CallbackContext context);
+        void OnString3Mute(InputAction.CallbackContext context);
+        void OnString4Mute(InputAction.CallbackContext context);
+        void OnString5Mute(InputAction.CallbackContext context);
+        void OnString6Mute(InputAction.CallbackContext context);
     }
 }

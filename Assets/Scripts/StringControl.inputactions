@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Mute",
-                    "type": "Button",
-                    "id": "48a20042-8d58-4846-b157-bc5393775f9c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MouseClick",
                     "type": "Button",
                     "id": "3e1297f3-1c8e-448e-8cc6-989a6d902a2b",
@@ -76,17 +67,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3f372347-4078-4705-8030-33698c48982c",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mute",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1e09ace4-2047-4254-ad9a-590c45e56339",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -104,6 +84,134 @@
                     "processors": "",
                     "groups": "",
                     "action": "Bend",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "StringMute",
+            "id": "8733a1fa-d50a-4426-9499-5cf80b5ed31e",
+            "actions": [
+                {
+                    "name": "String1Mute",
+                    "type": "Button",
+                    "id": "282cacbb-41fc-49f6-97f2-6c836bd3f3fe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String2Mute",
+                    "type": "Button",
+                    "id": "0a082c52-c6a0-4668-9438-d77ebeb733a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String3Mute",
+                    "type": "Button",
+                    "id": "917c8c40-fe55-4b96-b627-3517e187aa44",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String4Mute",
+                    "type": "Button",
+                    "id": "b4089348-94ef-4f94-9b1b-ef253bd38c4b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String5Mute",
+                    "type": "Button",
+                    "id": "9317011f-8e96-4de1-8196-f16c83e6a9b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String6Mute",
+                    "type": "Button",
+                    "id": "b9a6a903-d983-4252-93bd-f5fe32d27c54",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d8eab2f4-0ed8-45ae-a326-4b61e2509b8a",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String1Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f165bcb6-6f49-47fe-9ec7-b99622e5ee0e",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String2Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1b89cb1-258b-4297-b2f0-dfda5430f2dc",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String3Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89e4bd51-13cc-4b85-b3ce-4f1833306856",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String4Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee1bee2f-3b9d-4708-8b42-a248c9219641",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String5Mute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb55e703-2b13-4ede-987f-8f287367352d",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String6Mute",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
