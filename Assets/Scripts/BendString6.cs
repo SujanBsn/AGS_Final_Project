@@ -78,6 +78,7 @@ public class BendString6 : MonoBehaviour
     {
         Vector2 moverLocation = String6.mover.transform.position;
         playFreq = frequency * (1 + math.abs(moverLocation.y - y_Coords) / (.6f));
+        Debug.Log(moverLocation.y - y_Coords);
         PlayNote.SetNote(6, playFreq);
         playFreq = 1;
     }
@@ -85,16 +86,15 @@ public class BendString6 : MonoBehaviour
 
     private void Update()
     {
-        currentPos = String6.mover.transform.position;
-        if(currentPos.y!=lastPos.y)
-            SetYFreq();
-        lastPos = currentPos;
-
         if (bendCounter == 1)
         {
             YSlide();
-        }
 
+            currentPos = String6.mover.transform.position;
+            if (currentPos.y != lastPos.y)
+                SetYFreq();
+            lastPos = currentPos;
+        }
     }
 
     /// <summary>
