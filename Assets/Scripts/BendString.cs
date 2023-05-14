@@ -1,28 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BendString6 : MonoBehaviour
+public class BendString : MonoBehaviour
 {
-    String6 String6;
+    String String;
     PlayNote PlayNote;
     GameObject mover;
-    Vector2 moverPos,currentPos,lastPos;
+    Vector2 moverPos, currentPos, lastPos;//For sliding in the y direction
 
     float x_Coords, y_Coords, frequency = 1, playFreq = 1;
 
     int bendCounter = 0;
     bool onMover = false;
+
     private void Start()
     {
-        String6 = GetComponent<String6>();
+        String = GetComponent<String>();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>();
-        mover = String6.mover;
+        mover = String.mover;
         lastPos = mover.transform.position;
-
     }
     /// <summary>
     /// To determine the position of the Bend and change the frequency accordingly
@@ -45,8 +42,9 @@ public class BendString6 : MonoBehaviour
             if (bendCounter == 1)
             {
                 YSlide();
-                PlayNote.PlaySingleString(5);
+                PlayNote.PlaySingleString(String.stringNum);
             }
+
             if (bendCounter >= 2)
             {
                 moverPos.x = x_Coords;
@@ -76,21 +74,20 @@ public class BendString6 : MonoBehaviour
     /// </summary>
     public void SetYFreq()
     {
-        Vector2 moverLocation = String6.mover.transform.position;
+        Vector2 moverLocation = String.mover.transform.position;
         playFreq = frequency * (1 + math.abs(moverLocation.y - y_Coords) / (.6f));
-        Debug.Log(moverLocation.y - y_Coords);
-        PlayNote.SetNote(6, playFreq);
+        PlayNote.SetNote(String.stringNum, playFreq);
         playFreq = 1;
     }
 
 
     private void Update()
     {
-        if (bendCounter == 1)
+        if (bendCounter == 1)//everything is placed inside condition to distinguish non-bend y movement
         {
             YSlide();
 
-            currentPos = String6.mover.transform.position;
+            currentPos = String.mover.transform.position;
             if (currentPos.y != lastPos.y)
                 SetYFreq();
             lastPos = currentPos;

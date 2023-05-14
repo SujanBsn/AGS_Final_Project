@@ -24,7 +24,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     ""name"": ""StringControl"",
     ""maps"": [
         {
-            ""name"": ""String"",
+            ""name"": ""StringControls"",
             ""id"": ""3ca655ef-0660-44dc-8a89-1c0612e19fa6"",
             ""actions"": [
                 {
@@ -134,13 +134,13 @@ public partial class @StringController: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // String
-        m_String = asset.FindActionMap("String", throwIfNotFound: true);
-        m_String_StrumGuitar = m_String.FindAction("StrumGuitar", throwIfNotFound: true);
-        m_String_HammerNote = m_String.FindAction("HammerNote", throwIfNotFound: true);
-        m_String_Mute = m_String.FindAction("Mute", throwIfNotFound: true);
-        m_String_MouseClick = m_String.FindAction("MouseClick", throwIfNotFound: true);
-        m_String_Bend = m_String.FindAction("Bend", throwIfNotFound: true);
+        // StringControls
+        m_StringControls = asset.FindActionMap("StringControls", throwIfNotFound: true);
+        m_StringControls_StrumGuitar = m_StringControls.FindAction("StrumGuitar", throwIfNotFound: true);
+        m_StringControls_HammerNote = m_StringControls.FindAction("HammerNote", throwIfNotFound: true);
+        m_StringControls_Mute = m_StringControls.FindAction("Mute", throwIfNotFound: true);
+        m_StringControls_MouseClick = m_StringControls.FindAction("MouseClick", throwIfNotFound: true);
+        m_StringControls_Bend = m_StringControls.FindAction("Bend", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -199,32 +199,32 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // String
-    private readonly InputActionMap m_String;
-    private List<IStringActions> m_StringActionsCallbackInterfaces = new List<IStringActions>();
-    private readonly InputAction m_String_StrumGuitar;
-    private readonly InputAction m_String_HammerNote;
-    private readonly InputAction m_String_Mute;
-    private readonly InputAction m_String_MouseClick;
-    private readonly InputAction m_String_Bend;
-    public struct StringActions
+    // StringControls
+    private readonly InputActionMap m_StringControls;
+    private List<IStringControlsActions> m_StringControlsActionsCallbackInterfaces = new List<IStringControlsActions>();
+    private readonly InputAction m_StringControls_StrumGuitar;
+    private readonly InputAction m_StringControls_HammerNote;
+    private readonly InputAction m_StringControls_Mute;
+    private readonly InputAction m_StringControls_MouseClick;
+    private readonly InputAction m_StringControls_Bend;
+    public struct StringControlsActions
     {
         private @StringController m_Wrapper;
-        public StringActions(@StringController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @StrumGuitar => m_Wrapper.m_String_StrumGuitar;
-        public InputAction @HammerNote => m_Wrapper.m_String_HammerNote;
-        public InputAction @Mute => m_Wrapper.m_String_Mute;
-        public InputAction @MouseClick => m_Wrapper.m_String_MouseClick;
-        public InputAction @Bend => m_Wrapper.m_String_Bend;
-        public InputActionMap Get() { return m_Wrapper.m_String; }
+        public StringControlsActions(@StringController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @StrumGuitar => m_Wrapper.m_StringControls_StrumGuitar;
+        public InputAction @HammerNote => m_Wrapper.m_StringControls_HammerNote;
+        public InputAction @Mute => m_Wrapper.m_StringControls_Mute;
+        public InputAction @MouseClick => m_Wrapper.m_StringControls_MouseClick;
+        public InputAction @Bend => m_Wrapper.m_StringControls_Bend;
+        public InputActionMap Get() { return m_Wrapper.m_StringControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(StringActions set) { return set.Get(); }
-        public void AddCallbacks(IStringActions instance)
+        public static implicit operator InputActionMap(StringControlsActions set) { return set.Get(); }
+        public void AddCallbacks(IStringControlsActions instance)
         {
-            if (instance == null || m_Wrapper.m_StringActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_StringActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_StringControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_StringControlsActionsCallbackInterfaces.Add(instance);
             @StrumGuitar.started += instance.OnStrumGuitar;
             @StrumGuitar.performed += instance.OnStrumGuitar;
             @StrumGuitar.canceled += instance.OnStrumGuitar;
@@ -242,7 +242,7 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @Bend.canceled += instance.OnBend;
         }
 
-        private void UnregisterCallbacks(IStringActions instance)
+        private void UnregisterCallbacks(IStringControlsActions instance)
         {
             @StrumGuitar.started -= instance.OnStrumGuitar;
             @StrumGuitar.performed -= instance.OnStrumGuitar;
@@ -261,22 +261,22 @@ public partial class @StringController: IInputActionCollection2, IDisposable
             @Bend.canceled -= instance.OnBend;
         }
 
-        public void RemoveCallbacks(IStringActions instance)
+        public void RemoveCallbacks(IStringControlsActions instance)
         {
-            if (m_Wrapper.m_StringActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_StringControlsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IStringActions instance)
+        public void SetCallbacks(IStringControlsActions instance)
         {
-            foreach (var item in m_Wrapper.m_StringActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_StringControlsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_StringActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_StringControlsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public StringActions @String => new StringActions(this);
-    public interface IStringActions
+    public StringControlsActions @StringControls => new StringControlsActions(this);
+    public interface IStringControlsActions
     {
         void OnStrumGuitar(InputAction.CallbackContext context);
         void OnHammerNote(InputAction.CallbackContext context);

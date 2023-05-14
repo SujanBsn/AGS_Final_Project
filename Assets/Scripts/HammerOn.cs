@@ -1,37 +1,38 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HammerOn6 : MonoBehaviour
+public class HammerOn : MonoBehaviour
 {
-    String6 String6;
+    public GameObject stringMover;
+    String String;
     PlayNote PlayNote;
 
-    bool  onMover = false;
-    int hammerCounter = 0;
+    public static bool  onMover = false;
 
     public void Start()
     {
-        String6 = GetComponent<String6>();
+        String = stringMover.GetComponent<String>();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>();
     }
 
     /// <summary>
-    /// To determine the position of the HammerOn
+    /// To determine the position of the HammerOn on the string
     /// </summary>
     public void OnHammerNote(InputAction.CallbackContext context)
     {
-        if(context.started) 
+        if (context.started && onMover) 
         {
-            if (onMover)
-                hammerCounter++;
-            
-            if(hammerCounter == 1)
-            {
-                String6.Slide();
-                PlayNote.PlaySingleString(5);
-            }
-            hammerCounter = hammerCounter > 1 ? 0 : hammerCounter;
+            PlayHammerNote();
         }
+    }
+
+    /// <summary>
+    /// Play the selected hammer note
+    /// </summary>
+    public void PlayHammerNote()
+    {
+        String.Slide();
+        PlayNote.PlaySingleString(String.stringNum);
     }
 
     /// <summary>

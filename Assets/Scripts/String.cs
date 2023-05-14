@@ -1,18 +1,20 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class String6 : MonoBehaviour
+public class String : MonoBehaviour
 {
     PlayNote PlayNote;
 
-    public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
+    public GameObject startPos, endPos, bridgePos, mover, open, stringObj;//the objects within each string
     public Vector2 startPosValue, endPosValue, bridgePosValue, currentPos, lastPos; //To store the value of constantly used positions
 
     public static double[] nutToFret = new double[20];//To store the position of each fret
 
-    bool onMover1 = false;  //to check if the mover is pressed
+    bool onMover = false;  //to check if the mover is pressed
     int slideCounter = 0; //to check how many times the mover has been pressed for sliding
+    public static int stringNum;//The string to which this script is attached
 
     private void Start()
     {
@@ -22,7 +24,9 @@ public class String6 : MonoBehaviour
         lastPos = startPosValue;
 
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>(); //Because this script is a component of any object
+        
         CalculateFretPosition();
+        GetStringNum();
     }
 
     /// <summary>
@@ -51,7 +55,7 @@ public class String6 : MonoBehaviour
     {
         if (context.started)
         {
-            if (onMover1)
+            if (onMover)
                 slideCounter++;
 
             slideCounter = slideCounter > 1 ? 0 : slideCounter;
@@ -129,7 +133,39 @@ public class String6 : MonoBehaviour
         playFreq = lowFretFreq + (upFretFreq - lowFretFreq) * (getPosOfFret.x - (float)nutToFret[lowFret])
             / (float)(nutToFret[upFret] - (float)nutToFret[lowFret]);
 
-        PlayNote.SetNote(6, playFreq);
+        PlayNote.SetNote(stringNum, playFreq);
+    }
+
+    /// <summary>
+    /// To get the string number this string is attached to
+    /// </summary>
+    public void GetStringNum()
+    {
+        string stringName;
+        stringName = gameObject.name;
+
+        switch (stringName)
+        {
+            case "String6Mover":
+                stringNum = 6;
+                break;
+            case "String5Mover":
+                stringNum = 5;
+                break;
+            case "String4Mover":
+                stringNum = 4;
+                break;
+            case "String3Mover":
+                stringNum = 3;
+                break;
+            case "String2Mover":
+                stringNum = 2;
+                break;
+            case "String1Mover":
+                stringNum = 1;
+                break;
+
+        }
     }
 
     void Update()
@@ -159,17 +195,29 @@ public class String6 : MonoBehaviour
     }
 
     /// <summary>
+    /// To determine the position of the HammerOn on the string
+    /// </summary>
+    public void OnMoverHammerNote(InputAction.CallbackContext context)
+    {
+        if (context.started && onMover)
+        {
+            PlayNote.PlaySingleString(stringNum);
+
+        }
+    }
+
+    /// <summary>
     /// To detect when we enter the mover
     /// </summary>
     private void OnMouseEnter()
     {
-        onMover1 = true;
+        onMover = true;
     }
 
     /// <summary>
     /// To detect when we exit the mover
     private void OnMouseExit()
     {
-        onMover1 = false;
+        onMover = false;
     }
 }
