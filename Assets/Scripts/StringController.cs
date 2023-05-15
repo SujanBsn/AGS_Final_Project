@@ -238,6 +238,134 @@ public partial class @StringController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlaySingle"",
+            ""id"": ""223ea2cb-4948-4d73-bf02-c5358113097c"",
+            ""actions"": [
+                {
+                    ""name"": ""String1"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca21c796-1bd6-418f-bbc5-d702519d8826"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String2"",
+                    ""type"": ""Button"",
+                    ""id"": ""abfb3b8c-7780-48e3-a53f-be2d2fca00a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String3"",
+                    ""type"": ""Button"",
+                    ""id"": ""82cd9981-7da5-4546-912f-b30c8abb5975"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String4"",
+                    ""type"": ""Button"",
+                    ""id"": ""639f59ce-63e3-404f-8f3a-b3b156bdeed9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String5"",
+                    ""type"": ""Button"",
+                    ""id"": ""a821dfa1-34ef-412f-a4a7-56588e348239"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""String6"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc757780-77a2-40fe-89b9-d484aa1be77d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""12908026-f15c-48ac-927d-4736b7164350"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""605970de-9c9f-4f1b-a9f0-6cd3448a9913"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69a6f659-a05d-4ed9-9e03-2040fba105fd"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""883e55c9-c033-40a4-ae74-b0535a3b0dff"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9056f21-89ab-47cc-8619-3192e105b6f0"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfaa35ff-baa6-495d-b102-9b903010703b"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""String6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -256,6 +384,14 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         m_StringMute_String4Mute = m_StringMute.FindAction("String4Mute", throwIfNotFound: true);
         m_StringMute_String5Mute = m_StringMute.FindAction("String5Mute", throwIfNotFound: true);
         m_StringMute_String6Mute = m_StringMute.FindAction("String6Mute", throwIfNotFound: true);
+        // PlaySingle
+        m_PlaySingle = asset.FindActionMap("PlaySingle", throwIfNotFound: true);
+        m_PlaySingle_String1 = m_PlaySingle.FindAction("String1", throwIfNotFound: true);
+        m_PlaySingle_String2 = m_PlaySingle.FindAction("String2", throwIfNotFound: true);
+        m_PlaySingle_String3 = m_PlaySingle.FindAction("String3", throwIfNotFound: true);
+        m_PlaySingle_String4 = m_PlaySingle.FindAction("String4", throwIfNotFound: true);
+        m_PlaySingle_String5 = m_PlaySingle.FindAction("String5", throwIfNotFound: true);
+        m_PlaySingle_String6 = m_PlaySingle.FindAction("String6", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -469,6 +605,92 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         }
     }
     public StringMuteActions @StringMute => new StringMuteActions(this);
+
+    // PlaySingle
+    private readonly InputActionMap m_PlaySingle;
+    private List<IPlaySingleActions> m_PlaySingleActionsCallbackInterfaces = new List<IPlaySingleActions>();
+    private readonly InputAction m_PlaySingle_String1;
+    private readonly InputAction m_PlaySingle_String2;
+    private readonly InputAction m_PlaySingle_String3;
+    private readonly InputAction m_PlaySingle_String4;
+    private readonly InputAction m_PlaySingle_String5;
+    private readonly InputAction m_PlaySingle_String6;
+    public struct PlaySingleActions
+    {
+        private @StringController m_Wrapper;
+        public PlaySingleActions(@StringController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @String1 => m_Wrapper.m_PlaySingle_String1;
+        public InputAction @String2 => m_Wrapper.m_PlaySingle_String2;
+        public InputAction @String3 => m_Wrapper.m_PlaySingle_String3;
+        public InputAction @String4 => m_Wrapper.m_PlaySingle_String4;
+        public InputAction @String5 => m_Wrapper.m_PlaySingle_String5;
+        public InputAction @String6 => m_Wrapper.m_PlaySingle_String6;
+        public InputActionMap Get() { return m_Wrapper.m_PlaySingle; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlaySingleActions set) { return set.Get(); }
+        public void AddCallbacks(IPlaySingleActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlaySingleActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlaySingleActionsCallbackInterfaces.Add(instance);
+            @String1.started += instance.OnString1;
+            @String1.performed += instance.OnString1;
+            @String1.canceled += instance.OnString1;
+            @String2.started += instance.OnString2;
+            @String2.performed += instance.OnString2;
+            @String2.canceled += instance.OnString2;
+            @String3.started += instance.OnString3;
+            @String3.performed += instance.OnString3;
+            @String3.canceled += instance.OnString3;
+            @String4.started += instance.OnString4;
+            @String4.performed += instance.OnString4;
+            @String4.canceled += instance.OnString4;
+            @String5.started += instance.OnString5;
+            @String5.performed += instance.OnString5;
+            @String5.canceled += instance.OnString5;
+            @String6.started += instance.OnString6;
+            @String6.performed += instance.OnString6;
+            @String6.canceled += instance.OnString6;
+        }
+
+        private void UnregisterCallbacks(IPlaySingleActions instance)
+        {
+            @String1.started -= instance.OnString1;
+            @String1.performed -= instance.OnString1;
+            @String1.canceled -= instance.OnString1;
+            @String2.started -= instance.OnString2;
+            @String2.performed -= instance.OnString2;
+            @String2.canceled -= instance.OnString2;
+            @String3.started -= instance.OnString3;
+            @String3.performed -= instance.OnString3;
+            @String3.canceled -= instance.OnString3;
+            @String4.started -= instance.OnString4;
+            @String4.performed -= instance.OnString4;
+            @String4.canceled -= instance.OnString4;
+            @String5.started -= instance.OnString5;
+            @String5.performed -= instance.OnString5;
+            @String5.canceled -= instance.OnString5;
+            @String6.started -= instance.OnString6;
+            @String6.performed -= instance.OnString6;
+            @String6.canceled -= instance.OnString6;
+        }
+
+        public void RemoveCallbacks(IPlaySingleActions instance)
+        {
+            if (m_Wrapper.m_PlaySingleActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlaySingleActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlaySingleActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlaySingleActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlaySingleActions @PlaySingle => new PlaySingleActions(this);
     public interface IStringControlsActions
     {
         void OnStrumGuitar(InputAction.CallbackContext context);
@@ -484,5 +706,14 @@ public partial class @StringController: IInputActionCollection2, IDisposable
         void OnString4Mute(InputAction.CallbackContext context);
         void OnString5Mute(InputAction.CallbackContext context);
         void OnString6Mute(InputAction.CallbackContext context);
+    }
+    public interface IPlaySingleActions
+    {
+        void OnString1(InputAction.CallbackContext context);
+        void OnString2(InputAction.CallbackContext context);
+        void OnString3(InputAction.CallbackContext context);
+        void OnString4(InputAction.CallbackContext context);
+        void OnString5(InputAction.CallbackContext context);
+        void OnString6(InputAction.CallbackContext context);
     }
 }

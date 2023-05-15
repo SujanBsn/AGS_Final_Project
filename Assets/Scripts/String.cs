@@ -147,22 +147,22 @@ public class String : MonoBehaviour
         switch (stringName)
         {
             case "String6Mover":
-                stringNum = 6;
-                break;
-            case "String5Mover":
                 stringNum = 5;
                 break;
-            case "String4Mover":
+            case "String5Mover":
                 stringNum = 4;
                 break;
-            case "String3Mover":
+            case "String4Mover":
                 stringNum = 3;
                 break;
-            case "String2Mover":
+            case "String3Mover":
                 stringNum = 2;
                 break;
-            case "String1Mover":
+            case "String2Mover":
                 stringNum = 1;
+                break;
+            case "String1Mover":
+                stringNum = 0;
                 break;
 
         }

@@ -216,6 +216,134 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlaySingle",
+            "id": "223ea2cb-4948-4d73-bf02-c5358113097c",
+            "actions": [
+                {
+                    "name": "String1",
+                    "type": "Button",
+                    "id": "ca21c796-1bd6-418f-bbc5-d702519d8826",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String2",
+                    "type": "Button",
+                    "id": "abfb3b8c-7780-48e3-a53f-be2d2fca00a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String3",
+                    "type": "Button",
+                    "id": "82cd9981-7da5-4546-912f-b30c8abb5975",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String4",
+                    "type": "Button",
+                    "id": "639f59ce-63e3-404f-8f3a-b3b156bdeed9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String5",
+                    "type": "Button",
+                    "id": "a821dfa1-34ef-412f-a4a7-56588e348239",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "String6",
+                    "type": "Button",
+                    "id": "fc757780-77a2-40fe-89b9-d484aa1be77d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "12908026-f15c-48ac-927d-4736b7164350",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "605970de-9c9f-4f1b-a9f0-6cd3448a9913",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69a6f659-a05d-4ed9-9e03-2040fba105fd",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "883e55c9-c033-40a4-ae74-b0535a3b0dff",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9056f21-89ab-47cc-8619-3192e105b6f0",
+                    "path": "<Keyboard>/numpad5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfaa35ff-baa6-495d-b102-9b903010703b",
+                    "path": "<Keyboard>/numpad6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "String6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayNote : MonoBehaviour
 {
-    public AudioSource[] stringSource =new AudioSource[6];//A source for each string
+    public AudioSource[] stringSource = new AudioSource[6];//A source for each string
     /// <summary>
     /// Set the note of the selected string
     /// </summary>
     public void SetNote(int stringNumber,float frequency)
     {
-        stringSource[stringNumber - 1].pitch = frequency;
+        stringSource[stringNumber].pitch = frequency;
     }  
 
     /// <summary>
@@ -32,6 +32,6 @@ public class PlayNote : MonoBehaviour
 
     public void PlaySingleString(int stringNum)
     {
-        stringSource[stringNum - 1].Play();
+        stringSource[stringNum].Play();
     }
 }
