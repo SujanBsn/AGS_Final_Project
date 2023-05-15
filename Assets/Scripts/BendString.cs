@@ -28,6 +28,9 @@ public class BendString : MonoBehaviour
     {
         if (context.started)
         {
+            if (onMover)
+                bendCounter++;
+
             if (bendCounter == 0)
             {
                 frequency = PlayNote.stringSource[5].pitch;
@@ -35,9 +38,6 @@ public class BendString : MonoBehaviour
                 x_Coords = moverPos.x;
                 y_Coords = moverPos.y;
             }
-
-            if (onMover)
-                bendCounter++;
 
             if (bendCounter == 1)
             {
@@ -83,12 +83,13 @@ public class BendString : MonoBehaviour
 
     private void Update()
     {
-        if (bendCounter == 1)//everything is placed inside condition to distinguish non-bend y movement
+        if (bendCounter == 1)//everything is placed inside condition to distinguish from non-bend y movement
         {
             YSlide();
 
             currentPos = String.mover.transform.position;
-            if (currentPos.y != lastPos.y)
+
+            if (currentPos.y != lastPos.y)//To make sure x_changed frequency is registered from String.cs
                 SetYFreq();
             lastPos = currentPos;
         }
