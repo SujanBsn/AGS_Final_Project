@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlaySingleString : MonoBehaviour
+public class PlayString : MonoBehaviour
 {
     PlayNote PlayNote;
 
@@ -13,9 +13,8 @@ public class PlaySingleString : MonoBehaviour
     /// <summary>
     /// Play selected string
     /// </summary>
-    public void PlayString(int stringNum)
+    public void SingleStringPlay(int stringNum)
     {
-        Debug.Log("hii");
         PlayNote.PlaySingleString(stringNum);
     }
 
@@ -25,7 +24,7 @@ public class PlaySingleString : MonoBehaviour
     public void String1Play(InputAction.CallbackContext context)
     {
         if (context.started)
-            PlayString(0);
+            SingleStringPlay(0);
     }
 
     /// <summary>
@@ -34,7 +33,7 @@ public class PlaySingleString : MonoBehaviour
     public void String2Play(InputAction.CallbackContext context)
     {
         if(context.started)
-            PlayString(1);
+            SingleStringPlay(1);
     }
 
     /// <summary>
@@ -43,7 +42,7 @@ public class PlaySingleString : MonoBehaviour
     public void String3Play(InputAction.CallbackContext context)
     {
         if (context.started)
-            PlayString(2);
+            SingleStringPlay(2);
     }
 
     /// <summary>
@@ -52,7 +51,7 @@ public class PlaySingleString : MonoBehaviour
     public void String4Play(InputAction.CallbackContext context)
     {
         if (context.started)
-            PlayString(3);
+            SingleStringPlay(3);
     }
 
     /// <summary>
@@ -61,7 +60,7 @@ public class PlaySingleString : MonoBehaviour
     public void String5play(InputAction.CallbackContext context)
     {
         if (context.started)
-            PlayString(4);
+            SingleStringPlay(4);
     }
 
     /// <summary>
@@ -70,6 +69,6 @@ public class PlaySingleString : MonoBehaviour
     public void String6Play(InputAction.CallbackContext context)
     {
         if (context.started)
-            PlayString(5);
+            SingleStringPlay(5);
     }
 }

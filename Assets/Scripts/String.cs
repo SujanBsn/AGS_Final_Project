@@ -164,7 +164,6 @@ public class String : MonoBehaviour
             case "String1Mover":
                 stringNum = 0;
                 break;
-
         }
     }
 
@@ -195,14 +194,13 @@ public class String : MonoBehaviour
     }
 
     /// <summary>
-    /// To determine the position of the HammerOn on the string
+    /// To determine the position of the HammerOn on the string if the mover overlaps
     /// </summary>
     public void OnMoverHammerNote(InputAction.CallbackContext context)
     {
         if (context.started && onMover)
         {
             PlayNote.PlaySingleString(stringNum);
-
         }
     }
 

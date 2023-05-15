@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayNote : MonoBehaviour
 {
     public AudioSource[] stringSource = new AudioSource[6];//A source for each string
+
     /// <summary>
-    /// Set the note of the selected string
+    /// Set the note of the selected string to the selected frequency
     /// </summary>
     public void SetNote(int stringNumber,float frequency)
     {
@@ -30,6 +31,9 @@ public class PlayNote : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Play a single selected string
+    /// </summary>
     public void PlaySingleString(int stringNum)
     {
         stringSource[stringNum].Play();

@@ -7,7 +7,7 @@ public class HammerOn : MonoBehaviour
     String String;
     PlayNote PlayNote;
 
-    public static bool  onMover = false;
+    public static bool  onString = false;
 
     public void Start()
     {
@@ -20,7 +20,7 @@ public class HammerOn : MonoBehaviour
     /// </summary>
     public void OnHammerNote(InputAction.CallbackContext context)
     {
-        if (context.started && onMover) 
+        if (context.started && onString) 
         {
             PlayHammerNote();
         }
@@ -40,7 +40,7 @@ public class HammerOn : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
-        onMover = true;
+        onString = true;
     }
 
     /// <summary>
@@ -48,6 +48,6 @@ public class HammerOn : MonoBehaviour
     /// </summary>
     private void OnMouseExit()
     {
-        onMover = false;
+        onString = false;
     }
 }
