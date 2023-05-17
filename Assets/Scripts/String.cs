@@ -7,14 +7,14 @@ public class String : MonoBehaviour
 {
     PlayNote PlayNote;
 
-    public GameObject startPos, endPos, bridgePos, mover, open, stringObj;//the objects within each string
+    public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
     public Vector2 startPosValue, endPosValue, bridgePosValue, currentPos, lastPos; //To store the value of constantly used positions
 
     public static double[] nutToFret = new double[20];//To store the position of each fret
 
     bool onMover = false;  //to check if the mover is pressed
     int slideCounter = 0; //to check how many times the mover has been pressed for sliding
-    public static int stringNum;//The string to which this script is attached
+    public int stringNum;//The string to which this script is attached
 
     private void Start()
     {

@@ -4,14 +4,14 @@ using UnityEngine.InputSystem;
 public class HammerOn : MonoBehaviour
 {
     public GameObject stringMover;
-    String String;
+    String StringVar;
     PlayNote PlayNote;
 
-    public static bool  onString = false;
+    public bool onString = false;
 
     public void Start()
     {
-        String = stringMover.GetComponent<String>();
+        StringVar = stringMover.GetComponent<String>();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>();
     }
 
@@ -31,8 +31,8 @@ public class HammerOn : MonoBehaviour
     /// </summary>
     public void PlayHammerNote()
     {
-        String.Slide();
-        PlayNote.PlaySingleString(String.stringNum);
+        StringVar.Slide();
+        PlayNote.PlaySingleString(StringVar.stringNum);
     }
 
     /// <summary>

@@ -4,21 +4,20 @@ using UnityEngine.InputSystem;
 
 public class BendString : MonoBehaviour
 {
-    String String;
+    String StringVar;
     PlayNote PlayNote;
-    GameObject mover;
+    public GameObject mover;
     Vector2 moverPos, currentPos, lastPos;//For sliding in the y direction
 
     float x_Coords, y_Coords, frequency = 1, playFreq = 1;
 
     int bendCounter = 0;
-    bool onMover = false;
+    bool onMover_b = false;
 
     private void Start()
     {
-        String = GetComponent<String>();
+        StringVar = gameObject.GetComponent<String>();
         PlayNote = GameObject.Find("BaseSource").GetComponent<PlayNote>();
-        mover = String.mover;
         lastPos = mover.transform.position;
     }
     /// <summary>
@@ -26,28 +25,23 @@ public class BendString : MonoBehaviour
     /// </summary>
     public void OnBendString(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && onMover_b)
         {
-            if (onMover)
-                bendCounter++;
-
             if (bendCounter == 0)
             {
-                frequency = PlayNote.stringSource[5].pitch;
+                frequency = PlayNote.stringSource[StringVar.stringNum].pitch;
                 moverPos = mover.transform.position;
                 x_Coords = moverPos.x;
                 y_Coords = moverPos.y;
-            }
 
-            if (bendCounter == 1)
-            {
-                YSlide();
-                PlayNote.PlaySingleString(String.stringNum);
+                bendCounter++;
             }
-
-            if (bendCounter >= 2)
+            else if (bendCounter == 1)
             {
-                moverPos.x = x_Coords;
+                bendCounter++;
+            }
+            else if (bendCounter >= 2)
+            {
                 mover.transform.position = moverPos;
                 bendCounter = 0;
             }
@@ -67,6 +61,7 @@ public class BendString : MonoBehaviour
         mouseLocation.y = math.clamp(mouseLocation.y, y_Min, y_Max);
 
         mover.transform.position = mouseLocation;
+
     }
 
     /// <summary>
@@ -74,21 +69,22 @@ public class BendString : MonoBehaviour
     /// </summary>
     public void SetYFreq()
     {
-        Vector2 moverLocation = String.mover.transform.position;
+        Vector2 moverLocation = mover.transform.position;
         playFreq = frequency * (1 + math.abs(moverLocation.y - y_Coords) / (.6f));
-        PlayNote.SetNote(String.stringNum, playFreq);
+        PlayNote.SetNote(StringVar.stringNum, playFreq);
         playFreq = 1;
     }
 
-
     private void Update()
     {
+        if (StringVar.stringNum == 5)
+            Debug.Log(bendCounter);
+
         if (bendCounter == 1)//everything is placed inside condition to distinguish from non-bend y movement
         {
             YSlide();
 
-            currentPos = String.mover.transform.position;
-
+            currentPos = mover.transform.position;
             if (currentPos.y != lastPos.y)//To make sure x_changed frequency is registered from String.cs
                 SetYFreq();
             lastPos = currentPos;
@@ -100,7 +96,7 @@ public class BendString : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
-        onMover = true;
+        onMover_b = true;
     }
 
     /// <summary>
@@ -108,6 +104,6 @@ public class BendString : MonoBehaviour
     /// </summary>
     private void OnMouseExit()
     {
-        onMover = false;
+        onMover_b = false;
     }
 }
