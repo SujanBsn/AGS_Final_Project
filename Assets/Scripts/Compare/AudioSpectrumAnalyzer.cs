@@ -1,20 +1,29 @@
 using UnityEngine;
 using System.IO;
-using UnityEngine.UI;
 
 public class AudioSpectrumAnalyzer : MonoBehaviour
 {
+    // Audio clips to analyze and compare
     public AudioClip audioClip1;
     public AudioClip audioClip2;
+
+    // Parameters for graph generation
     public int sampleSize = 1024;
     public int graphWidth = 1024;
     public int graphHeight = 512;
     public float amplitudeMultiplier = 10f;
+
+    // Folder name for saving graph files
     public string folderName = "Plots";
+
+    // Game objects to assign the generated graphs as sprites
     public GameObject graphObject1;
     public GameObject graphObject2;
-    public Text similarityText;
 
+    // UI text element to display the similarity percentage
+    public UnityEngine.UI.Text similarityText;
+
+    // Private variables for storing the generated graph textures
     private Texture2D graphTexture1;
     private Texture2D graphTexture2;
 
@@ -23,44 +32,55 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
         // Empty out the Plots folder before generating the graphs
         EmptyPlotsFolder();
 
+        // Create the graph textures with specified dimensions and format
         graphTexture1 = new Texture2D(graphWidth, graphHeight, TextureFormat.RGBA32, false);
         graphTexture1.wrapMode = TextureWrapMode.Clamp;
 
         graphTexture2 = new Texture2D(graphWidth, graphHeight, TextureFormat.RGBA32, false);
         graphTexture2.wrapMode = TextureWrapMode.Clamp;
 
+        // Analyze the audio spectrum and generate graphs for the two audio clips
         AnalyzeAudioSpectrum(audioClip1, "SpectrumGraph1.png", graphObject1);
         AnalyzeAudioSpectrum(audioClip2, "SpectrumGraph2.png", graphObject2);
 
-        // Compare the two generated graphs for similarity
+        // Compare the generated graphs and display the similarity percentage
         CompareGraphs("SpectrumGraph1.png", "SpectrumGraph2.png");
     }
 
     void EmptyPlotsFolder()
     {
+        // Construct the folder path
         string folderPath = Path.Combine(Application.persistentDataPath, folderName);
 
         if (Directory.Exists(folderPath))
         {
+            // Delete the folder if it already exists
             DirectoryInfo directory = new DirectoryInfo(folderPath);
             directory.Delete(true);
         }
 
+        // Create a new directory for the plots
         Directory.CreateDirectory(folderPath);
     }
 
     void AnalyzeAudioSpectrum(AudioClip clip, string fileName, GameObject graphObject)
     {
+        // Initialize an array to store the audio spectrum data
         float[] spectrumData = new float[sampleSize];
+
+        // Calculate the number of samples per step based on the graph width
         int totalSamples = clip.samples;
         int samplesPerStep = totalSamples / graphWidth;
 
+        // Create an array to hold the colors of the graph pixels
         Color[] graphPixels = new Color[graphWidth * graphHeight];
+
         for (int i = 0; i < graphWidth; i++)
         {
             int startIndex = i * samplesPerStep;
             clip.GetData(spectrumData, startIndex);
 
+            // Calculate the average amplitude for each step
             float averageAmplitude = 0f;
             for (int j = 0; j < sampleSize; j++)
             {
@@ -68,8 +88,10 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
             }
             averageAmplitude /= sampleSize;
 
+            // Calculate the height of the graph based on the average amplitude
             float height = averageAmplitude * graphHeight * amplitudeMultiplier;
 
+            // Assign the appropriate color (white or black) to each pixel based on the height
             for (int j = 0; j < graphHeight; j++)
             {
                 if (j < height)
@@ -85,17 +107,24 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
             }
         }
 
+        // Get the corresponding graph texture based on the file name
         Texture2D graphTexture = (fileName == "SpectrumGraph1.png") ? graphTexture1 : graphTexture2;
+
+        // Set the pixels of the graph texture and apply the changes
         graphTexture.SetPixels(graphPixels);
         graphTexture.Apply();
 
+        // Encode the graph texture to PNG format
         byte[] pngBytes = graphTexture.EncodeToPNG();
 
+        // Construct the file path to save the graph image
         string folderPath = Path.Combine(Application.persistentDataPath, folderName);
         string filePath = Path.Combine(folderPath, fileName);
 
+        // Write the PNG bytes to a file
         File.WriteAllBytes(filePath, pngBytes);
 
+        // Log the file path of the saved graph image
         Debug.Log("Spectrum graph saved: " + filePath);
 
         // Load the saved PNG file as a sprite
@@ -116,65 +145,79 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
 
     Sprite LoadSpriteFromFilePath(string filePath)
     {
+        // Read the bytes of the file
         byte[] bytes = File.ReadAllBytes(filePath);
+
+        // Create a new texture and load the image bytes into it
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(bytes);
+
+        // Create a sprite using the loaded texture
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
     }
 
-    void CompareGraphs(string file1, string file2)
+    void CompareGraphs(string filePath1, string filePath2)
     {
-        string filePath1 = Path.Combine(Application.persistentDataPath, folderName, file1);
-        string filePath2 = Path.Combine(Application.persistentDataPath, folderName, file2);
+        // Construct the file paths for the two graph images
+        string path1 = Path.Combine(Application.persistentDataPath, folderName, filePath1);
+        string path2 = Path.Combine(Application.persistentDataPath, folderName, filePath2);
 
-        // Calculate similarity between the two graphs
-        float similarity = CalculateSimilarity(filePath1, filePath2);
+        // Calculate the similarity percentage between the two graphs
+        float similarityPercentage = CalculateSimilarity(path1, path2) * 100f;
 
-        // Calculate similarity percentage
-        float similarityPercentage = similarity * 100f;
+        // Log the similarity percentage
+        Debug.Log("Graph similarity: " + similarityPercentage.ToString("F2") + "%");
 
-        Debug.Log("Similarity percentage: " + similarityPercentage + "%");
-
-        // Update the similarity text on UI
-        similarityText.text = "Similarity: " + similarityPercentage.ToString("F2") + "%";
+        // Update the similarity text on the UI
+        if (similarityText != null)
+        {
+            similarityText.text = "Similarity: " + similarityPercentage.ToString("F2") + "%";
+        }
     }
 
     float CalculateSimilarity(string filePath1, string filePath2)
     {
+        // Load the two graph images as textures
         Texture2D texture1 = LoadTextureFromFile(filePath1);
         Texture2D texture2 = LoadTextureFromFile(filePath2);
 
-        if (texture1 == null || texture2 == null)
+        // Check if the textures have the same dimensions
+        if (texture1.width != texture2.width || texture1.height != texture2.height)
         {
-            Debug.LogError("Failed to load textures for similarity calculation.");
+            Debug.LogError("Graph images have different dimensions!");
             return 0f;
         }
 
+        // Get the pixels of the two textures
+        Color[] pixels1 = texture1.GetPixels();
+        Color[] pixels2 = texture2.GetPixels();
+
+        // Count the number of matching pixels
         int matchingPixels = 0;
-        int totalPixels = texture1.width * texture1.height;
+        int totalPixels = pixels1.Length;
 
-        for (int x = 0; x < texture1.width; x++)
+        for (int i = 0; i < totalPixels; i++)
         {
-            for (int y = 0; y < texture1.height; y++)
+            if (pixels1[i] == pixels2[i])
             {
-                Color color1 = texture1.GetPixel(x, y);
-                Color color2 = texture2.GetPixel(x, y);
-
-                if (color1.Equals(color2))
-                {
-                    matchingPixels++;
-                }
+                matchingPixels++;
             }
         }
 
-        return (float)matchingPixels / totalPixels;
+        // Calculate the similarity percentage
+        float similarityPercentage = (float)matchingPixels / totalPixels;
+        return similarityPercentage;
     }
 
     Texture2D LoadTextureFromFile(string filePath)
     {
+        // Read the bytes of the file
         byte[] bytes = File.ReadAllBytes(filePath);
+
+        // Create a new texture and load the image bytes into it
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(bytes);
+
         return texture;
     }
 }
