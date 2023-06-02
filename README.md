@@ -8,6 +8,7 @@ I've decided to implement the following strategy:
     -For each string have the following:
         -Start Point
         -End Point
+        -Bridge point
         -Mover
         -Mute String
         -A slider
