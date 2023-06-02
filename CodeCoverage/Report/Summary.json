@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "generatedon": "2023-06-02T19:06:53Z",
+    "parser": "MultiReportParser (3x OpenCoverParser)",
+    "assemblies": 4,
+    "classes": 10,
+    "files": 10,
+    "coveredlines": 143,
+    "uncoveredlines": 428,
+    "coverablelines": 571,
+    "totallines": 1640,
+    "linecoverage": 25,
+    "coveredbranches": 0,
+    "totalbranches": 0,
+    "coveredmethods": 23,
+    "totalmethods": 137,
+    "methodcoverage": 16.7
+ },
+  "coverage": {
+    "assemblies": [
+      { "name": "Assembly-CSharp", "classes": 7, "coverage": 0, "coveredlines": 0, "coverablelines": 416, "totallines": 1307, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 113, "classesinassembly": [
+        { "name": "BendString", "coverage": 0, "coveredlines": 0, "coverablelines": 43, "totallines": 109, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 8 },
+        { "name": "HammerOn", "coverage": 0, "coveredlines": 0, "coverablelines": 13, "totallines": 53, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 5 },
+        { "name": "MuteString", "coverage": 0, "coveredlines": 0, "coverablelines": 30, "totallines": 90, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "PlayNote", "coverage": 0, "coveredlines": 0, "coverablelines": 13, "totallines": 41, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 4 },
+        { "name": "PlayString", "coverage": 0, "coveredlines": 0, "coverablelines": 22, "totallines": 74, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 8 },
+        { "name": "String", "coverage": 0, "coveredlines": 0, "coverablelines": 83, "totallines": 221, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 14 },
+        { "name": "StringController", "coverage": 0, "coveredlines": 0, "coverablelines": 212, "totallines": 719, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 65 } ] },
+      { "name": "AudioAnalyzer", "classes": 1, "coverage": 97.3, "coveredlines": 111, "coverablelines": 114, "totallines": 225, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 17, "totalmethods": 17, "classesinassembly": [
+        { "name": "AudioSpectrumAnalyzer", "coverage": 97.3, "coveredlines": 111, "coverablelines": 114, "totallines": 225, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 17, "totalmethods": 17 } ] },
+      { "name": "EditMode", "classes": 1, "coverage": 100, "coveredlines": 19, "coverablelines": 19, "totallines": 48, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 4, "totalmethods": 4, "classesinassembly": [
+        { "name": "EditModeTest", "coverage": 100, "coveredlines": 19, "coverablelines": 19, "totallines": 48, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 4, "totalmethods": 4 } ] },
+      { "name": "PlayMode", "classes": 1, "coverage": 59, "coveredlines": 13, "coverablelines": 22, "totallines": 60, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 66.6, "coveredmethods": 2, "totalmethods": 3, "classesinassembly": [
+        { "name": "PlayModeTest", "coverage": 59, "coveredlines": 13, "coverablelines": 22, "totallines": 60, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 66.6, "coveredmethods": 2, "totalmethods": 3 } ] } ]
+  }
+}

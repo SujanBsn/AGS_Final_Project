@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 public class AudioSpectrumAnalyzer : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
     public AudioClip audioClip2;
 
     // Parameters for graph generation
-    public int sampleSize = 1024;
-    public int graphWidth = 1024;
-    public int graphHeight = 512;
+    public int sampleSize = 512;
+    public int graphWidth = 512;
+    public int graphHeight = 256;
     public float amplitudeMultiplier = 10f;
 
     // Folder name for saving graph files
@@ -23,11 +24,11 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
     // UI text element to display the similarity percentage
     public UnityEngine.UI.Text similarityText;
 
-    // Private variables for storing the generated graph textures
-    private Texture2D graphTexture1;
-    private Texture2D graphTexture2;
+    // Variables for storing the generated graph textures
+    public Texture2D graphTexture1;
+    public Texture2D graphTexture2;
 
-    void Start()
+    public void Awake()
     {
         // Empty out the Plots folder before generating the graphs
         EmptyPlotsFolder();
@@ -49,21 +50,20 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
 
     void EmptyPlotsFolder()
     {
-        // Construct the folder path
-        string folderPath = Path.Combine(Application.persistentDataPath, folderName);
+        // Construct the folder path relative to the Assets folder
+        string folderPath = Path.Combine("Assets", folderName);
 
         if (Directory.Exists(folderPath))
         {
             // Delete the folder if it already exists
-            DirectoryInfo directory = new DirectoryInfo(folderPath);
-            directory.Delete(true);
+            Directory.Delete(folderPath, true);
         }
 
         // Create a new directory for the plots
         Directory.CreateDirectory(folderPath);
     }
 
-    void AnalyzeAudioSpectrum(AudioClip clip, string fileName, GameObject graphObject)
+    public void AnalyzeAudioSpectrum(AudioClip clip, string fileName, GameObject graphObject)
     {
         // Initialize an array to store the audio spectrum data
         float[] spectrumData = new float[sampleSize];
@@ -108,7 +108,8 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
         }
 
         // Get the corresponding graph texture based on the file name
-        Texture2D graphTexture = (fileName == "SpectrumGraph1.png") ? graphTexture1 : graphTexture2;
+        Texture2D graphTexture = new Texture2D(graphWidth, graphHeight, TextureFormat.RGBA32, false);
+        graphTexture.wrapMode = TextureWrapMode.Clamp;
 
         // Set the pixels of the graph texture and apply the changes
         graphTexture.SetPixels(graphPixels);
@@ -118,14 +119,14 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
         byte[] pngBytes = graphTexture.EncodeToPNG();
 
         // Construct the file path to save the graph image
-        string folderPath = Path.Combine(Application.persistentDataPath, folderName);
+        string folderPath = Path.Combine(Application.dataPath, folderName);
         string filePath = Path.Combine(folderPath, fileName);
 
         // Write the PNG bytes to a file
         File.WriteAllBytes(filePath, pngBytes);
 
-        // Log the file path of the saved graph image
-        Debug.Log("Spectrum graph saved: " + filePath);
+        // Refresh the Asset Database to make Unity aware of the new file
+        AssetDatabase.Refresh();
 
         // Load the saved PNG file as a sprite
         Sprite sprite = LoadSpriteFromFilePath(filePath);
@@ -137,6 +138,7 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
             spriteRenderer.sprite = sprite;
         }
     }
+
 
     int GetPixelIndex(int x, int y)
     {
@@ -156,11 +158,11 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
     }
 
-    void CompareGraphs(string filePath1, string filePath2)
+    public void CompareGraphs(string filePath1, string filePath2)
     {
         // Construct the file paths for the two graph images
-        string path1 = Path.Combine(Application.persistentDataPath, folderName, filePath1);
-        string path2 = Path.Combine(Application.persistentDataPath, folderName, filePath2);
+        string path1 = Path.Combine(Application.dataPath, folderName, filePath1);
+        string path2 = Path.Combine(Application.dataPath, folderName, filePath2);
 
         // Calculate the similarity percentage between the two graphs
         float similarityPercentage = CalculateSimilarity(path1, path2) * 100f;
@@ -175,7 +177,7 @@ public class AudioSpectrumAnalyzer : MonoBehaviour
         }
     }
 
-    float CalculateSimilarity(string filePath1, string filePath2)
+    public float CalculateSimilarity(string filePath1, string filePath2)
     {
         // Load the two graph images as textures
         Texture2D texture1 = LoadTextureFromFile(filePath1);

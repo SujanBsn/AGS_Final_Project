@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0.0.0.0">
+  <Summary numSequencePoints="135" visitedSequencePoints="132" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="97.78" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="2" numClasses="2" visitedMethods="10" numMethods="10" />
+  <Modules>
+    <Module>
+      <Summary numSequencePoints="122" visitedSequencePoints="119" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="97.54" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="9" numMethods="9" />
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>AudioAnalyzer</ModuleName>
+      <Files>
+        <File uid="8" fullPath="E:/Unity/AGS_Final_Project/Assets/Scripts/Compare/AudioSpectrumAnalyzer.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="122" visitedSequencePoints="119" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="97.54" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="9" numMethods="9" />
+          <FullName>AudioSpectrumAnalyzer</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663297</MetadataToken>
+              <Name>System.Void AudioSpectrumAnalyzer::Awake()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="582" ordinal="0" offset="0" sl="32" sc="5" el="32" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="583" ordinal="0" offset="1" sl="34" sc="9" el="34" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="584" ordinal="0" offset="8" sl="37" sc="9" el="37" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="585" ordinal="0" offset="33" sl="38" sc="9" el="38" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="586" ordinal="0" offset="46" sl="40" sc="9" el="40" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="587" ordinal="0" offset="71" sl="41" sc="9" el="41" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="588" ordinal="0" offset="84" sl="44" sc="9" el="44" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="589" ordinal="0" offset="108" sl="45" sc="9" el="45" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="590" ordinal="0" offset="132" sl="48" sc="9" el="48" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="591" ordinal="0" offset="149" sl="49" sc="5" el="49" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663298</MetadataToken>
+              <Name>System.Void AudioSpectrumAnalyzer::EmptyPlotsFolder()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="592" ordinal="0" offset="0" sl="52" sc="5" el="52" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="593" ordinal="0" offset="1" sl="54" sc="9" el="54" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="594" ordinal="0" offset="18" sl="56" sc="9" el="56" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="595" ordinal="0" offset="28" sl="57" sc="9" el="57" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="596" ordinal="0" offset="29" sl="59" sc="13" el="59" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="597" ordinal="0" offset="37" sl="60" sc="9" el="60" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="598" ordinal="0" offset="38" sl="63" sc="9" el="63" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="599" ordinal="0" offset="45" sl="64" sc="5" el="64" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="51" visitedSequencePoints="51" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>System.Void AudioSpectrumAnalyzer::AnalyzeAudioSpectrum(UnityEngine.AudioClip, System.String, UnityEngine.GameObject)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="600" ordinal="0" offset="0" sl="67" sc="5" el="67" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="601" ordinal="0" offset="1" sl="69" sc="9" el="69" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="602" ordinal="0" offset="13" sl="72" sc="9" el="72" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="603" ordinal="0" offset="20" sl="73" sc="9" el="73" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="604" ordinal="0" offset="29" sl="76" sc="9" el="76" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="605" ordinal="0" offset="48" sl="78" sc="14" el="78" ec="14" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="606" ordinal="0" offset="56" sl="79" sc="9" el="79" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="607" ordinal="0" offset="57" sl="80" sc="13" el="80" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="608" ordinal="0" offset="63" sl="81" sc="13" el="81" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="609" ordinal="0" offset="73" sl="84" sc="13" el="84" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="610" ordinal="0" offset="80" sl="85" sc="18" el="85" ec="18" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1048576" uspid="611" ordinal="0" offset="85" sl="86" sc="13" el="86" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1048576" uspid="612" ordinal="0" offset="86" sl="87" sc="17" el="87" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1048576" uspid="613" ordinal="0" offset="100" sl="88" sc="13" el="88" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1048576" uspid="614" ordinal="0" offset="101" sl="85" sc="45" el="85" ec="45" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1050624" uspid="615" ordinal="0" offset="107" sl="85" sc="29" el="85" ec="29" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="616" ordinal="0" offset="123" sl="89" sc="13" el="89" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="617" ordinal="0" offset="135" sl="92" sc="13" el="92" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="618" ordinal="0" offset="154" sl="95" sc="18" el="95" ec="18" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="619" ordinal="0" offset="159" sl="96" sc="13" el="96" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="620" ordinal="0" offset="160" sl="97" sc="17" el="97" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="26192" uspid="621" ordinal="0" offset="173" sl="98" sc="17" el="98" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="26192" uspid="622" ordinal="0" offset="174" sl="99" sc="21" el="99" ec="21" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="26192" uspid="623" ordinal="0" offset="186" sl="100" sc="21" el="100" ec="21" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="26192" uspid="624" ordinal="0" offset="199" sl="101" sc="17" el="101" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="498096" uspid="625" ordinal="0" offset="202" sl="103" sc="17" el="103" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="498096" uspid="626" ordinal="0" offset="203" sl="104" sc="21" el="104" ec="21" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="498096" uspid="627" ordinal="0" offset="215" sl="105" sc="21" el="105" ec="21" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="498096" uspid="628" ordinal="0" offset="228" sl="106" sc="17" el="106" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="629" ordinal="0" offset="229" sl="107" sc="13" el="107" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="630" ordinal="0" offset="230" sl="95" sc="46" el="95" ec="46" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="526336" uspid="631" ordinal="0" offset="236" sl="95" sc="29" el="95" ec="29" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="632" ordinal="0" offset="252" sl="108" sc="9" el="108" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2048" uspid="633" ordinal="0" offset="253" sl="78" sc="41" el="78" ec="41" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2052" uspid="634" ordinal="0" offset="259" sl="78" sc="25" el="78" ec="25" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="635" ordinal="0" offset="278" sl="111" sc="9" el="111" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="636" ordinal="0" offset="299" sl="112" sc="9" el="112" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="637" ordinal="0" offset="308" sl="115" sc="9" el="115" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="638" ordinal="0" offset="317" sl="116" sc="9" el="116" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="639" ordinal="0" offset="325" sl="119" sc="9" el="119" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="640" ordinal="0" offset="334" sl="122" sc="9" el="122" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="641" ordinal="0" offset="352" sl="123" sc="9" el="123" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="642" ordinal="0" offset="362" sl="126" sc="9" el="126" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="643" ordinal="0" offset="372" sl="129" sc="9" el="129" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="644" ordinal="0" offset="378" sl="132" sc="9" el="132" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="645" ordinal="0" offset="388" sl="135" sc="9" el="135" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="646" ordinal="0" offset="396" sl="136" sc="9" el="136" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="647" ordinal="0" offset="410" sl="137" sc="9" el="137" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="648" ordinal="0" offset="411" sl="138" sc="13" el="138" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="649" ordinal="0" offset="421" sl="139" sc="9" el="139" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="650" ordinal="0" offset="422" sl="140" sc="5" el="140" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663300</MetadataToken>
+              <Name>System.Int32 AudioSpectrumAnalyzer::GetPixelIndex(System.Int32, System.Int32)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="524288" uspid="651" ordinal="0" offset="0" sl="144" sc="5" el="144" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="652" ordinal="0" offset="1" sl="145" sc="9" el="145" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="524288" uspid="653" ordinal="0" offset="14" sl="146" sc="5" el="146" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663301</MetadataToken>
+              <Name>UnityEngine.Sprite AudioSpectrumAnalyzer::LoadSpriteFromFilePath(System.String)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="654" ordinal="0" offset="0" sl="149" sc="5" el="149" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="655" ordinal="0" offset="1" sl="151" sc="9" el="151" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="656" ordinal="0" offset="8" sl="154" sc="9" el="154" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="657" ordinal="0" offset="16" sl="155" sc="9" el="155" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="658" ordinal="0" offset="24" sl="158" sc="9" el="158" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="659" ordinal="0" offset="77" sl="159" sc="5" el="159" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663302</MetadataToken>
+              <Name>System.Void AudioSpectrumAnalyzer::CompareGraphs(System.String, System.String)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="660" ordinal="0" offset="0" sl="162" sc="5" el="162" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="661" ordinal="0" offset="1" sl="164" sc="9" el="164" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="662" ordinal="0" offset="19" sl="165" sc="9" el="165" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="663" ordinal="0" offset="37" sl="168" sc="9" el="168" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="664" ordinal="0" offset="52" sl="171" sc="9" el="171" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="665" ordinal="0" offset="85" sl="174" sc="9" el="174" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="666" ordinal="0" offset="101" sl="175" sc="9" el="175" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="667" ordinal="0" offset="102" sl="176" sc="13" el="176" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="668" ordinal="0" offset="141" sl="177" sc="9" el="177" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="1" uspid="669" ordinal="0" offset="142" sl="178" sc="5" el="178" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="86.96" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="23" visitedSequencePoints="20" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="86.96" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663303</MetadataToken>
+              <Name>System.Single AudioSpectrumAnalyzer::CalculateSimilarity(System.String, System.String)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="670" ordinal="0" offset="0" sl="181" sc="5" el="181" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="671" ordinal="0" offset="1" sl="183" sc="9" el="183" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="672" ordinal="0" offset="9" sl="184" sc="9" el="184" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="673" ordinal="0" offset="17" sl="187" sc="9" el="187" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="674" ordinal="0" offset="57" sl="188" sc="9" el="188" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="675" ordinal="0" offset="58" sl="189" sc="13" el="189" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="676" ordinal="0" offset="69" sl="190" sc="13" el="190" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="677" ordinal="0" offset="78" sl="194" sc="9" el="194" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="678" ordinal="0" offset="85" sl="195" sc="9" el="195" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="679" ordinal="0" offset="92" sl="198" sc="9" el="198" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="680" ordinal="0" offset="95" sl="199" sc="9" el="199" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="681" ordinal="0" offset="100" sl="201" sc="14" el="201" ec="14" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="682" ordinal="0" offset="105" sl="202" sc="9" el="202" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="683" ordinal="0" offset="106" sl="203" sc="13" el="203" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="684" ordinal="0" offset="133" sl="204" sc="13" el="204" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="685" ordinal="0" offset="134" sl="205" sc="17" el="205" ec="17" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="686" ordinal="0" offset="140" sl="206" sc="13" el="206" ec="13" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="687" ordinal="0" offset="141" sl="207" sc="9" el="207" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262144" uspid="688" ordinal="0" offset="142" sl="201" sc="42" el="201" ec="42" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="262146" uspid="689" ordinal="0" offset="148" sl="201" sc="25" el="201" ec="25" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="690" ordinal="0" offset="160" sl="210" sc="9" el="210" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="691" ordinal="0" offset="169" sl="211" sc="9" el="211" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="692" ordinal="0" offset="175" sl="212" sc="5" el="212" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663304</MetadataToken>
+              <Name>UnityEngine.Texture2D AudioSpectrumAnalyzer::LoadTextureFromFile(System.String)</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="693" ordinal="0" offset="0" sl="215" sc="5" el="215" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="694" ordinal="0" offset="1" sl="217" sc="9" el="217" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="695" ordinal="0" offset="8" sl="220" sc="9" el="220" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="696" ordinal="0" offset="16" sl="221" sc="9" el="221" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="697" ordinal="0" offset="24" sl="223" sc="9" el="223" ec="9" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="4" uspid="698" ordinal="0" offset="28" sl="224" sc="5" el="224" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663305</MetadataToken>
+              <Name>AudioSpectrumAnalyzer::AudioSpectrumAnalyzer()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="699" ordinal="0" offset="0" sl="12" sc="5" el="12" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="700" ordinal="0" offset="11" sl="13" sc="5" el="13" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="701" ordinal="0" offset="22" sl="14" sc="5" el="14" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="702" ordinal="0" offset="33" sl="15" sc="5" el="15" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="2" uspid="703" ordinal="0" offset="44" sl="18" sc="5" el="18" ec="5" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module>
+      <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>PlayMode</ModuleName>
+      <Files>
+        <File uid="9" fullPath="E:/Unity/AGS_Final_Project/Assets/PlayMode/PlayModeTest.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>PlayModeTest/&lt;AnalyzeAudioSpectrum_CompareGraphs_ReturnsExpectedSimilarity&gt;d__2</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663308</MetadataToken>
+              <Name>System.Boolean PlayModeTest/&lt;AnalyzeAudioSpectrum_CompareGraphs_ReturnsExpectedSimilarity&gt;d__2::MoveNext()</Name>
+              <FileRef uid="9" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="714" ordinal="0" offset="31" sl="35" sc="5" el="35" ec="5" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="715" ordinal="0" offset="32" sl="36" sc="9" el="36" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="716" ordinal="0" offset="43" sl="37" sc="9" el="37" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="717" ordinal="0" offset="75" sl="40" sc="9" el="40" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="718" ordinal="0" offset="91" sl="41" sc="9" el="41" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="719" ordinal="0" offset="108" sl="44" sc="9" el="44" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="720" ordinal="0" offset="125" sl="45" sc="9" el="45" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="721" ordinal="0" offset="142" sl="48" sc="9" el="48" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="722" ordinal="0" offset="176" sl="49" sc="9" el="49" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="723" ordinal="0" offset="210" sl="52" sc="9" el="52" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="724" ordinal="0" offset="237" sl="55" sc="9" el="55" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="725" ordinal="0" offset="248" sl="58" sc="9" el="58" ec="9" bec="0" bev="0" fileid="9" />
+                <SequencePoint vc="1" uspid="726" ordinal="0" offset="277" sl="59" sc="5" el="59" ec="5" bec="0" bev="0" fileid="9" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

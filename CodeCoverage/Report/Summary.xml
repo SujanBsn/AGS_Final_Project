@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>6/3/2023 - 12:51:53 AM</Generatedon>
+    <Parser>MultiReportParser (3x OpenCoverParser)</Parser>
+    <Assemblies>4</Assemblies>
+    <Classes>10</Classes>
+    <Files>10</Files>
+    <Coveredlines>143</Coveredlines>
+    <Uncoveredlines>428</Uncoveredlines>
+    <Coverablelines>571</Coverablelines>
+    <Totallines>1640</Totallines>
+    <Linecoverage>25</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>23</Coveredmethods>
+    <Totalmethods>137</Totalmethods>
+    <Methodcoverage>16.7</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Assembly-CSharp" classes="7" coverage="0" coveredlines="0" coverablelines="416" totallines="1307" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="113" methodcoverage="0">
+      <Class name="BendString" coverage="0" coveredlines="0" coverablelines="43" totallines="109" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="HammerOn" coverage="0" coveredlines="0" coverablelines="13" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="MuteString" coverage="0" coveredlines="0" coverablelines="30" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="PlayNote" coverage="0" coveredlines="0" coverablelines="13" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="PlayString" coverage="0" coveredlines="0" coverablelines="22" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="String" coverage="0" coveredlines="0" coverablelines="83" totallines="221" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+      <Class name="StringController" coverage="0" coveredlines="0" coverablelines="212" totallines="719" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="65" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="AudioAnalyzer" classes="1" coverage="97.3" coveredlines="111" coverablelines="114" totallines="225" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="17" totalmethods="17" methodcoverage="100">
+      <Class name="AudioSpectrumAnalyzer" coverage="97.3" coveredlines="111" coverablelines="114" totallines="225" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="17" totalmethods="17" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="EditMode" classes="1" coverage="100" coveredlines="19" coverablelines="19" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100">
+      <Class name="EditModeTest" coverage="100" coveredlines="19" coverablelines="19" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="PlayMode" classes="1" coverage="59" coveredlines="13" coverablelines="22" totallines="60" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="3" methodcoverage="66.6">
+      <Class name="PlayModeTest" coverage="59" coveredlines="13" coverablelines="22" totallines="60" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="3" methodcoverage="66.6" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
