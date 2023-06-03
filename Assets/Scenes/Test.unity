@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip1: {fileID: 8300000, guid: 775da60873d867d409436f3f5419f199, type: 3}
-  audioClip2: {fileID: 8300000, guid: 775da60873d867d409436f3f5419f199, type: 3}
+  audioClip2: {fileID: 8300000, guid: 82e41a3546eb53a4fa31234c03ff192c, type: 3}
   sampleSize: 512
   graphWidth: 512
   graphHeight: 256

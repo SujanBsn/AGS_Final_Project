@@ -45,8 +45,8 @@ public class String : MonoBehaviour
     }
 
     /// <summary>
-        /// Slides the mover in the direction of the mouse
-        /// </summary>
+    /// Slides the mover in the direction of the mouse
+    /// </summary>
     public void Slide()
     {
         float slope = CalculateSlope();
