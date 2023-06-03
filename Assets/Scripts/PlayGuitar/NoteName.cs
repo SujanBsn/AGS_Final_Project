@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +17,7 @@ public class NoteName : MonoBehaviour
     String String;
     int firstName;
     Name nameOfNote;
-    public Text nameNote;
-
+    public TextMeshProUGUI nameNote;
 
     private void Start()
     {
