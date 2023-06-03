@@ -1,5 +1,4 @@
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,11 +9,11 @@ public class String : MonoBehaviour
     public GameObject startPos, endPos, bridgePos, mover, open;//the objects within each string
     public Vector2 startPosValue, endPosValue, bridgePosValue, currentPos, lastPos; //To store the value of constantly used positions
 
-    public static double[] nutToFret = new double[20];//To store the position of each fret
+    public static double[] nutToFret = new double[21];//To store the position of each fret
 
     bool onMover = false;  //to check if the mover is pressed
     int slideCounter = 0; //to check how many times the mover has been pressed for sliding
-    public int stringNum;//The string to which this script is attached
+    public int stringNum, fretNum = 0;//The string to which this script is attached
 
     private void Start()
     {
@@ -29,24 +28,7 @@ public class String : MonoBehaviour
         GetStringNum();
     }
 
-    /// <summary>
-    /// Calculate and store the position of each fret from the nut and the bridge
-    /// </summary>
-    public void CalculateFretPosition()
-    {
-        float scaleLength = startPosValue.x - bridgePosValue.x;  //the distance from the nut to bridge
-        float distance = 0, location, scalingFactor;
 
-        //bridgeToFret[n-1] = scaleLength – nutToFret[n-1]
-        //nutToFret[n] = (bridgeToFret[n-1] / 17.817) + nutToFret[n-1]
-        for (int fret = 0; fret <= 19; fret++)//fret is the number of frets
-        {
-            location = scaleLength - distance;
-            scalingFactor = location / 17.817f;
-            distance += scalingFactor;
-            nutToFret[fret] = startPosValue.x-distance;
-        }
-    }
 
     /// <summary>
     /// Sets the beginning and ending of sliding on the string
@@ -91,14 +73,32 @@ public class String : MonoBehaviour
     }
 
     /// <summary>
+    /// Calculate and store the position of each fret from the nut and the bridge
+    /// </summary>
+    public void CalculateFretPosition()
+    {
+        nutToFret[0] = startPosValue.x;
+        float scaleLength = startPosValue.x - bridgePosValue.x;  //the distance from the nut to bridge
+        float distance = 0, location, scalingFactor;
+
+        //bridgeToFret[n-1] = scaleLength – nutToFret[n-1]
+        //nutToFret[n] = (bridgeToFret[n-1] / 17.817) + nutToFret[n-1]
+        for (int fret = 1; fret <= 20; fret++)//fret is the number of frets
+        {
+            location = scaleLength - distance;
+            scalingFactor = location / 17.817f;
+            distance += scalingFactor;
+            nutToFret[fret] = startPosValue.x - distance;
+        }
+    }
+
+    /// <summary>
     /// Sets the fret number of the mover
     /// </summary>
     public void SetFretNum()
     {
         Vector3 moverPosition = mover.transform.position;
-        int fretNum = 0;
-
-        for (int i = 0; i <= 19; i++)
+        for (int i = 0; i <= 20; i++)
         {
             if (moverPosition.x < nutToFret[i])
             {
@@ -106,7 +106,7 @@ public class String : MonoBehaviour
             }
         }
        
-        if( fretNum <= 18 )
+        if( fretNum <= 20 )
             SetFrequency(fretNum);
     }
 

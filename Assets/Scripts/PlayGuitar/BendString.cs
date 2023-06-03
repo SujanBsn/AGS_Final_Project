@@ -77,9 +77,6 @@ public class BendString : MonoBehaviour
 
     private void Update()
     {
-        if (StringVar.stringNum == 5)
-            Debug.Log(bendCounter);
-
         if (bendCounter == 1)//everything is placed inside condition to distinguish from non-bend y movement
         {
             YSlide();
